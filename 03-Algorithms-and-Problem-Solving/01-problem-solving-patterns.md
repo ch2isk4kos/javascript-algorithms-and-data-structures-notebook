@@ -165,3 +165,43 @@ function characterCount(string) {
 }
 
 ```
+
+---
+
+## 4. Solve or Simplify
+
+Solve the problem if you can but if you can't, solve a smaller portion of the problem.
+
+Ignore the processes that are more challenging and handle the code that you're already familiar with first.
+
+This will help gain insight to the more difficult parts.
+
+
+```js
+
+// ==============================================================
+// WRITE A FUNCTION WHICH TAKES IN A STRING AND RETURNS THE COUNT
+//                  OF EACH CHARACTER IN THE STRING
+// ==============================================================
+
+function characterCount(string) {
+  
+  // create an object to return
+  const result = {};
+  
+  // loop over input string; for each character:
+  for (let i = 0; i < string.length; i++) {
+    let char = string[i].toLowerCase();
+    // if the character is already a key - add one to count
+    if (result[char] > 0) {
+      result[char]++;
+    } else {
+      // if the character is not a key - add it and set value to 1
+      result[char] = 1;
+    }
+  }
+  // return an object with each character and its value
+  return result;
+}
+
+```
