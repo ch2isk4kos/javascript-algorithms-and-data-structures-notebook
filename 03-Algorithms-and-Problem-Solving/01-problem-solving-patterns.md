@@ -17,16 +17,16 @@ An algorithm could be:
 
 **1. Devise a Plan**
 
+* Understand the Problem
+* Explore Concrete Examples
+* Break It Down
+* Solve/Simplify
+* Look Back and Refactor
+
 **2. Master Common Problem Solving Patterns**
 
----
-
-## Problem Solving Patterns
-
 * Frequency Counters
-
 * Two Point Problems
-
 * Divide and Conquer
 
 ---
