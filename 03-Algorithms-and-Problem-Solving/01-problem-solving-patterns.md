@@ -205,3 +205,116 @@ function characterCount(string) {
 }
 
 ```
+
+---
+
+## 5. Refactor
+
+Solve the problem if you can but if you can't, solve a smaller portion of the problem. Ignore the processes that are more challenging and handle the code that you're already familiar with first. This will help gain insight to the more difficult parts.
+
+
+
+#### Refactoring Questions
+
+* Can you check the result?
+* Can you derive the result differently?
+* Do you understand it at a glance?
+* Could you use the result or method for some other problem?
+* Are there improvements that could be made to the performance of your solution?
+* Are there other ways to refactor your solution?
+* How has this problem been solved before?
+
+
+```js
+
+// ==============================================================
+// WRITE A FUNCTION WHICH TAKES IN A STRING AND RETURNS THE COUNT
+//                  OF EACH CHARACTER IN THE STRING
+// ==============================================================
+
+function characterCount(str) { 
+  // create an object to return
+  const obj = {};
+  // loop over input string; for each character:
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i].toLowerCase();
+    // check to see if the current str[i] is alpha numeric
+    if (/[a-z0-9]/.test(char)) {
+      // if the character is already a key - add one to count
+      if (obj[char] > 0) {
+        obj[char]++;
+      } else {
+        // if the character is not a key - add it and set value to 1
+        obj[char] = 1;
+      }
+    }
+  }
+  // return an object with each character and its value
+  return obj;
+}
+```
+
+</br>
+
+#### Refactor Again If Need Be
+
+```js
+// ==============================================================
+// WRITE A FUNCTION WHICH TAKES IN A STRING AND RETURNS THE COUNT
+//                  OF EACH CHARACTER IN THE STRING
+// ==============================================================
+
+function characterCount(str) { 
+  const obj = {};
+  
+  for (let char of str) {
+    char = char.toLowerCase();
+   
+    if (/[a-z0-9]/.test(char)) {
+      // accesses a corresponding value of a character in the object.
+      obj[char] = ++obj[char] || 1;
+      // if truthy - a value already exists - it increments the value by 1
+      // else it assigns a value of 1 to the character
+    }
+  }
+  return obj;
+}
+```
+
+</br>
+
+#### And Again...
+
+```js
+// ==============================================================
+// WRITE A FUNCTION WHICH TAKES IN A STRING AND RETURNS THE COUNT
+//                  OF EACH CHARACTER IN THE STRING
+// ==============================================================
+
+function characterCount(str) { 
+  const obj = {};
+  
+  for (let char of str) {
+    char = char.toLowerCase();
+   
+    if (isAlphaNumeric(char)) {     // invokes the function below
+      obj[char] = ++obj[char] || 1;
+    }
+  }
+  return obj;
+}
+
+function isAlphaNumeric(char) {
+  const code = char.charCodeAt(0);
+  
+  if (!(code > 47 && code < 58) &&  // numeric 0-9
+      !(code > 64 && code < 91) &&    // upper alpha (A-Z)
+      !(code > 96 && code < 123)) {   // lower alpha (a-z)
+      return false;
+    }
+  return true;
+}
+```
+
+
+
