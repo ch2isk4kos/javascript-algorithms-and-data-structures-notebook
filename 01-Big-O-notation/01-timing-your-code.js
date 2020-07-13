@@ -65,7 +65,7 @@ Three operations regardless of the size of `n`.
 
 function addingUpTo(x) {
   let total = 0;                  // 1 assignment
-  for (let i = 1; i <= n; i++) {  //  (1 assignment + `n` comparisons + `n` additions && `n` assignments)
+  for (let i = 1; i <= x; i++) {  //  (1 assignment + `n` comparisons + `n` additions && `n` assignments)
     total += i;                   // `n` additions && `n` assignments
   }
   return total;
