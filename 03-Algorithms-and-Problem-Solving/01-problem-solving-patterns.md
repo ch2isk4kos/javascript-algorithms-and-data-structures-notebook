@@ -15,7 +15,7 @@ An algorithm could be:
 
 ## Solving Algorithms
 
-**1. Devise a Plan**
+**Devise a Plan**
 
 1. Understand the Problem
 2. Explore Concrete Examples
@@ -23,7 +23,7 @@ An algorithm could be:
 4. Solve/Simplify
 5. Look Back and Refactor
 
-**2. Master Common Problem Solving Patterns**
+**Master Common Problem Solving Patterns**
 
 * Frequency Counters
 * Two Point Problems
@@ -31,7 +31,7 @@ An algorithm could be:
 
 ---
 
-## Understanding the Problem
+## 1. Understanding the Problem
 
 Many of these strategies derive from **George Polya**, author of `How To Solve It`.
 
@@ -72,7 +72,7 @@ Many of these strategies derive from **George Polya**, author of `How To Solve I
 
 ---
 
-## Concrete Examples
+## 2. Concrete Examples
 
 #### Start with Simple Examples
 
@@ -138,4 +138,30 @@ characterCount(365) // what would happen?
 
 ---
 
+## 3. Breaking Down the Problem
 
+Write down the actual steps of the problem in semi-pseudo code
+
+```js
+
+// ==============================================================
+// WRITE A FUNCTION WHICH TAKES IN A STRING AND RETURNS THE COUNT
+//                  OF EACH CHARACTER IN THE STRING
+// ==============================================================
+
+function characterCount(string) {
+  // create an object to return
+  
+  /* 
+  loop over input string; for each character:
+    * if the character is already a key - add one to count
+    * if the character is not a key - add it and set value to 1
+    * if the character is a number/letter AND is already a key - add one to count
+    * if the character is a number/letter AND not a key - add it and set value to 1
+    * if character is something other than letter/number - don't do anything
+  */
+
+  // return an object with each character and its value
+}
+
+```
