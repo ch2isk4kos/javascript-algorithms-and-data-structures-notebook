@@ -209,3 +209,9 @@ Let's say you input two arrays with 1000 elements each.
 That'd be a 1000 operations per loop - 3000 operations total.
 That equates to **`O(3n)`** which simplifies to **`O(n)`**
 
+---
+
+## Multiple Pointers Pattern
+
+
+
