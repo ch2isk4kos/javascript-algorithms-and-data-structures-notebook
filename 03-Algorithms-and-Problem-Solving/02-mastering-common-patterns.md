@@ -2,6 +2,8 @@
 
 ---
 
+</br>
+
 ## Solving Algorithms
 
 **Devise a Plan**
@@ -25,13 +27,15 @@
 
 ---
 
+</br>
+
 ## Frequency Counter Pattern
 
 A **Frequency Counter** uses objects and sets to collect values or frequencies or values.
 
 Frequency Counters can avoid the need of nested loops and their Big O Notation of O( n<sup>2</sup> ) quadratic operations with arrays/strings.
 
-**NOTE:** This pattern is not professionally referred to as a Frequency Counter. In fact, there is no "offical" terminology for it. The instructor is using this term because it uses an object to collect a bunch of values and their frequencies.
+**NOTE:** This pattern is not professionally referred to as a _Frequency Counter_. In fact, there is no "offical" terminology for it. The instructor is using this term because it uses an object to collect a bunch of values and their frequencies.
 
 It is useful in algorithms and challenges when you have multiple pieces of data and multiple inputs to compare them to see if they consist of similar values.
 
@@ -80,10 +84,10 @@ The Visual Process:
 Say you had these 2 arrays as inputs:
 [1, 2, 3, 2] and [9, 1, 4, 4]
 
-They both have the same amount of elements so the first
-if statement passes
+They both have the same amount of elements (4) so the first
+if statement passes.
 
-The it loops through each element of the first array:
+Then it loops through each element of the first array:
 [1, 2, 3, 2]
 
 1 is the first element so that gets squared and checked to see 
@@ -211,7 +215,202 @@ That equates to **`O(3n)`** which simplifies to **`O(n)`**
 
 ---
 
+</br>
+
 ## Multiple Pointers Pattern
 
+Creating multiple pointers or values that correspond to an index or position and moving them towards the beginning - end - or middle based on a specified condition.
+
+Multiple Pointers are effective and efficient for solving problems with minimal space complexity as well.
+
+**NOTE:** The term _Multiple Pointers_ is not professionally addressed as such.
+
+The idea of Multiple Pointers is utilized by different variables - whose position opposes one another - inside of a collection or string to find whatever it is you're looking for.
+
+_Imagine that you're hanging out with two friends. One of your friends loses a contact lense and the three of you split up to find it._
+
+```js
+const mall = [
+  "parking lot",
+  "food court",
+  "clothing store",
+  "contact lense",
+  "sneaker store",
+  "coffee stand",
+  "pet store"
+]
 
 
+```
+
+</br>
+
+#### Mutiple Pointers Example: Naive Solution
+
+```js
+// ============================================================
+// WRITE A FUNCTION WHICH ACCEPTS A SORTED ARRAY OF INTEGERS.
+
+// THE FUNCTION SHOULD FIND THE FIRST PAIR WHERE THE SUME IS 0.
+
+// RETURN AN ARRAY THAT INCLUDES BOTH VALUES THE SUM TO ZERO OR
+// UNDEFINED IF A PAIR DOES NOT EXIST.
+
+// NOTE: YOU SHOULD NOT IMPLEMENT YOUR SOLUTION THIS WAY.
+// ============================================================
+
+function sumZero(array) {
+  // first loop starts a pointer at the first element of the input array.
+  for (let i = 0; i < array.length; i++) {
+    // second loop starts a pointer at the second element of the input array.
+    for (let j = i+1; i < array.length; j++) {
+      // the current element from first pointer is then added to each current element of the second pointer.
+      // if at any point in the process, the current element from the first pointer added to the current element of the second pointer equates to zero - return both elements 
+      if (array[i] + array[j] === 0) {
+        return array[i], array[j];
+      };
+    };
+  };
+};
+
+sumZero([-3, -2, -1, 0, 1, 2, 3])   // [-3, 3]
+sumZero([-2, 0, 1, 3])              // undefined
+sumZero([1, 2, 3])                  // undefined
+```
+
+**Time Complexity**
+Quadratic: O( n<sup>2</sup> )
+
+**Space Complexity**
+Constant: O( 1 )
+
+</br>
+
+#### Mutiple Pointers Example: More Efficient Solution
+
+```js
+// ============================================================
+// WRITE A FUNCTION WHICH ACCEPTS A SORTED ARRAY OF INTEGERS.
+
+// THE FUNCTION SHOULD FIND THE FIRST PAIR WHERE THE SUME IS 0.
+
+// RETURN AN ARRAY THAT INCLUDES BOTH VALUES THE SUM TO ZERO OR
+// UNDEFINED IF A PAIR DOES NOT EXIST.
+
+// NOTE: 👍
+// ============================================================
+
+function sumZero(array) {
+  // pointer starts to the left - first index - of the input array
+  const left = 0; 
+  // pointer starts to the right - last index - of the input array
+  let right = array.length - 1; 
+
+    // as long as the left pointer is less than the right pointer...
+    while (left < right) {
+    // create a variable that points to the sum of both values
+    let sum = array[left] + array[right]; 
+
+    // if that sum matches 0...
+    if (sum === 0) {
+      // return both values
+      return [array[left], array[right]];
+      // if that sum is greater than 0...
+    } else if (sum > 0) { 
+      // move one position in from the right 
+      right--;
+      // otherwise...  
+    } else {  
+      // move one position in from the left 
+      left++; 
+    };
+  };
+};
+
+```
+
+**Breakdown**
+
+```js
+
+sumZero([-4, -3, -2, -1, 0, 1, 2, 3, 10])   // [-3, 3]
+
+/*
+====================================
+  START OF THE INITIAL INTERATION
+====================================
+
+const left = -4;
+const right = 10;
+
+while (-4 < 10) {
+  let sum = -4 + 10;
+
+  if (6 === 0) {
+    return both values;
+  } else if (6 > 0) {
+    move to 3
+  } else {
+    move to -3
+  }
+}
+
+================================================
+  YOU NOW MOVE TO 3 AND START THE PROCESS OVER
+================================================
+
+const left = -4;
+const right = 3;
+
+while (-4 < 3) {
+  let sum = -4 + 3;
+
+  if (-1 === 0) {
+    return both values;
+  } else if (-1 > 0) {
+    move to 2
+  } else {
+    move to -3
+  }
+}
+
+=================================================
+  YOU NOW MOVE TO -3 AND START THE PROCESS OVER
+=================================================
+
+const left = -3;
+const right = 3;
+
+while (-3 < 3) {
+  let sum = -3 + 3;
+
+  if (0 === 0) {
+    RETURN BOTH VALUES;
+  } else if (0 > 0) {
+    move to 2
+  } else {
+    move to -2
+  }
+}
+
+=================================================
+  THE SUM OF BOTH POINTERS NOW EQUATES TO 0
+          AND BOTH VALUE ARE RETURNED
+=================================================
+
+[-3, 3]
+
+*/
+```
+
+**Time Complexity**
+Constant: O( n )
+
+**Space Complexity**
+Constant: O( 1 )
+
+**NOTE:** This is not the only way to refactor this problem however a more efficient way of solving compared to the Naive Solution above.
+
+---
+
+</br>
