@@ -9,6 +9,8 @@
 */
 
 function countUniqueValues(array) {
+  if (array.length === 0) return 0;
+
   // set first pointer variable to 0 which will be used to compare the value of the first index at start
   var i = 0;
   // loop over input array with second pointer variable set to 1
