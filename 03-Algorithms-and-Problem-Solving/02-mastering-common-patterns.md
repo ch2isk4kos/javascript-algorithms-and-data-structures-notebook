@@ -245,7 +245,7 @@ const mall = [
 
 </br>
 
-#### Mutiple Pointers Example: Naive Solution
+#### Naive Solution Example
 
 ```js
 // ============================================================
@@ -329,7 +329,7 @@ function sumZero(array) {
 
 ```
 
-**Breakdown**
+**Multiple Pointers Breakdown**
 
 ```js
 
@@ -469,6 +469,8 @@ maxSubarraySum([4, 2, 1, 6], 1);           // 6
 maxSubarraySum([4, 2, 1, 6, 2], 4);        // 13
 maxSubarraySum([], 4);                     // null
 ```
+
+</br>
 
 **Solution Breakdown**
 
@@ -698,27 +700,61 @@ function maxSubarraySum( array, number ) {
 }
 ```
 
+</br>
+
 **Sliding Window Breakdown**
 
 ```js
-
-maxSubarraySum([2, 6, 9, 2, 1, 8, 5, 6, 3], 3);
-
 /*
-====================================
-     START OF INITIAL ITERATION
-====================================
-
 The first 3 digits get calculated just like before.
 
 However, instead of a second for loop beginning at the next position over 
 to calculate the sum of the next 3 digits...
 
-Use a variable pointing to the value of max sum of the first 3 digits to start.
+Use a variable to track the value of the max sum of the first 3 digits to start.
 
 As each iteration moves inward (to the right) of the input array, 
 subtract the previous index from the value of that max sum variable,
 then add the current index to the value of that.
+*/
+
+// ====================================
+//      START OF INITIAL ITERATION
+// ====================================
+
+//                      [2, 6, 9, 2, 1, 8, 5, 6, 3], 3
+function maxSubarraySum( array                     , number ) {
+  let maxSum = 0;
+  let tempSum = 0;
+
+  //        9           3
+  if ( array.length < number ) return null;   // passes the condition
+  
+  //                     3
+  for ( let i = 0; i < number; i++ ) {
+    maxSum += array[ i ];
+    // 2
+    // 8
+    // 17
+  }
+
+  //      = 17
+  tempSum = maxSum;
+
+  // loop starts at 3            9    
+  for ( let i = number; i < array.length; i++ ) {
+    // makes it possible to sum in increments based on the value the input number
+    tempSum = tempSum - array[ i - number ] + array[ i ]; 
+    
+    // Math.max compares the values of maxSum and tempSum and sets it to the greater value - you could always write an if statement instead like we did in the previous solution.
+    maxSum = Math.max( maxSum, tempSum );
+  }
+  return maxSum;
+}
+
+maxSubarraySum([2, 6, 9, 2, 1, 8, 5, 6, 3], 3);   // 19
+
+/*
 
 [ 2, 6, 9, 2, 1, 8, 5, 6, 3 ], 3
   .  .  .
@@ -784,4 +820,4 @@ then add the current index to the value of that.
 **Time Complexity** 
 Linear: O( n )
 
-**Remember:** It's Linear because it only iterates over the input array one time.
+**Remember:** It's Linear because it only iterates over the input array once.
