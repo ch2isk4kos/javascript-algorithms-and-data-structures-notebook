@@ -470,7 +470,7 @@ maxSubarraySum([4, 2, 1, 6, 2], 4);        // 13
 maxSubarraySum([], 4);                     // null
 ```
 
-**Breakdown**
+**Solution Breakdown**
 
 ```js
 
