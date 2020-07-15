@@ -306,8 +306,8 @@ function sumZero(array) {
   // pointer starts to the right - last index - of the input array
   let right = array.length - 1; 
 
-    // as long as the left pointer is less than the right pointer...
-    while (left < right) {
+  // as long as the left pointer is less than the right pointer...
+  while (left < right) {
     // create a variable that points to the sum of both values
     let sum = array[left] + array[right]; 
 
