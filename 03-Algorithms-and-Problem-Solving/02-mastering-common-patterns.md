@@ -337,7 +337,7 @@ sumZero([-4, -3, -2, -1, 0, 1, 2, 3, 10])   // [-3, 3]
 
 /*
 ====================================
-  START OF THE INITIAL INTERATION
+  START OF INITIAL ITERATION
 ====================================
 
 const left = -4;
@@ -349,9 +349,9 @@ while (-4 < 10) {
   if (6 === 0) {
     return both values;
   } else if (6 > 0) {
-    move to 3
+    right moves to 3
   } else {
-    move to -3
+    left moves to -3
   }
 }
 
@@ -368,9 +368,9 @@ while (-4 < 3) {
   if (-1 === 0) {
     return both values;
   } else if (-1 > 0) {
-    move to 2
+    right moves to 2
   } else {
-    move to -3
+    left moves to -3
   }
 }
 
@@ -387,9 +387,9 @@ while (-3 < 3) {
   if (0 === 0) {
     RETURN BOTH VALUES;
   } else if (0 > 0) {
-    move to 2
+    right moves to 2
   } else {
-    move to -2
+    left moves to -2
   }
 }
 
@@ -414,3 +414,374 @@ Constant: O( 1 )
 ---
 
 </br>
+
+## Sliding Window Pattern
+
+Involves creating a **window** - which can be a single variable or a subarray or even a string - that can either be an array or number from one position to another. Depending on a certain position, the window either increases or closes ( and a new window is created ). Useful for keeping track of a subset of data in an array or string, etc.
+
+So essentially whatever form of data structure you use (variable, subarray, string, etc) moves depending on a condition. It slides up from left to right. You could start from the right or even the center but it's more common to go left to right.
+
+**Sliding Windows** are a good way to keep track of a subset of data from a large collection.
+
+</br>
+
+#### A Problem / Solution without using Sliding Window
+
+```js
+// ===========================================================
+//  WRITE A FUNCTION WHICH ACCEPTS AN ARRAY OF INTEGERS AND A 
+//  NUMBER.
+
+//  THE FUNCTION SHOULD HAVE TO CALCULATE THE MAX SUM OF `n` 
+//  CONSECUTIVE ELEMENTS IN AN ARRAY.
+// ===========================================================
+
+function maxSubarraySum(array, number) {
+  // an edge case that checks if the input number is larger than the size of the input array
+  if (number > array.length) {
+    return null;
+  }
+
+  // setting the `max` variable to `-Infinity` accounts for an array of all negative numbers
+  let max = -Infinity;
+  
+  // the for loop sets the count to almost the end of the array
+  // this prevents from 
+  for (let i = 0; i < array.length - number + 1; i++) {
+    // the temp varibale keeps track of highest sum of integers
+    let temp = 0;
+    
+    for (let j = 0; j < number; j++) {
+      temp += array[ i + j ];
+    }
+
+    if (temp > max) {
+      max = temp;
+    }
+    console.log("temp and max: ", temp, max);
+  }
+  return max;
+}
+
+maxSubarraySum([1, 2, 5, 8, 1, 5], 2);     // 10
+maxSubarraySum([1, 2, 5, 8, 1, 5], 4);     // 17
+maxSubarraySum([4, 2, 1, 6], 1);           // 6
+maxSubarraySum([4, 2, 1, 6, 2], 4);        // 13
+maxSubarraySum([], 4);                     // null
+```
+
+**Breakdown**
+
+```js
+
+maxSubarraySum([2, 6, 9, 2, 1, 8, 5, 6, 3], 3);
+
+/*
+====================================
+   START OF INITIAL ITERATION
+====================================
+
+[ 2, 6, 9, 2, 1, 8, 5, 6, 3 ], 3
+  -  -  -
+
+adds up the first 3 index values (17)
+if 17 is greater than -Infinity (which it is)...
+the `max` variable is set to the `temp` varibale which is pointing to that sum.
+
+
+  for (let i = 0; i < array.length - number + 1; i++) {
+    let temp = 0;
+    
+    for (let j = 0; j < number; j++) {
+      temp += array[ i + j ];
+    }
+
+    if ( 17 > -Infinity ) {   <-- LOOK
+      max = 17;               <-- HERE!
+    }
+
+  }
+
+====================================
+          NEXT ITERATION
+====================================
+
+[ 2, 6, 9, 2, 1, 8, 5, 6, 3 ], 3
+     -  -  -
+
+window slides over one position to the right 
+and adds up the next 3 index values (17)
+
+Since 17 is not greater than itself,
+the `max` doesn't change and the iteration continues on.
+
+
+  for (let i = 0; i < array.length - number + 1; i++) {
+    let temp = 0;
+    
+    for (let j=0; j < number; j++) {
+      temp += array[ i + j ];
+    }
+
+    if ( 17 > 17 ) {    <-- LOOK
+      max = 17;         <-- HERE!
+    }
+  }
+
+====================================
+          NEXT ITERATION
+====================================
+
+[ 2, 6, 9, 2, 1, 8, 5, 6, 3 ], 3
+        -  -  -
+
+and again... (13)
+since 13 is not greater than 17,
+the `max` doesn't change and the iteration continues on.
+
+
+  for (let i = 0; i < array.length - number + 1; i++) {
+    let temp = 0;
+    
+    for (let j=0; j < number; j++) {
+      temp += array[ i + j ];
+    }
+
+    if ( 13 > 17 ) {    <-- LOOK
+      max = 17;         <-- HERE!
+    }
+  }
+
+====================================
+          NEXT ITERATION
+====================================
+
+[ 2, 6, 9, 2, 1, 8, 5, 6, 3 ], 3
+           -  -  -
+
+keeps going... (11)
+
+
+  for (let i = 0; i < array.length - number + 1; i++) {
+    let temp = 0;
+    
+    for (let j=0; j < number; j++) {
+      temp += array[ i + j ];
+    }
+
+    if ( 11 > 17 ) {    <-- LOOK
+      max = 17;         <-- HERE!
+    }
+  }
+
+====================================
+          NEXT ITERATION
+====================================
+
+[ 2, 6, 9, 2, 1, 8, 5, 6, 3 ], 3
+              -  -  -
+
+almost there... (14)
+
+
+  for (let i = 0; i < array.length - number + 1; i++) {
+    let temp = 0;
+    
+    for (let j=0; j < number; j++) {
+      temp += array[ i + j ];
+    }
+
+    if ( 14 > 17 ) {    <-- LOOK
+      max = 17;         <-- HERE!
+    }
+  }
+
+====================================
+          NEXT ITERATION
+====================================
+
+[ 2, 6, 9, 2, 1, 8, 5, 6, 3 ], 3
+                 -  -  -
+
+ok, here we go! (19)
+since 19 is greater than 17,
+the `max` variable is set to the `temp` varibale which is pointing to that sum.
+
+
+  for (let i = 0; i < array.length - number + 1; i++) {
+    let temp = 0;
+    
+    for (let j=0; j < number; j++) {
+      temp += array[ i + j ];
+    }
+
+    if ( 19 > 17 ) {    <-- LOOK
+      max = 19;         <-- HERE!
+    }
+  }
+
+====================================
+          FINAL ITERATION
+====================================
+
+[ 2, 6, 9, 2, 1, 8, 5, 6, 3 ], 3
+                    -  -  -
+the last sum (14)
+
+
+  for (let i = 0; i < array.length - number + 1; i++) {
+    let temp = 0;
+    
+    for (let j=0; j < number; j++) {
+      temp += array[ i + j ];
+    }
+
+    if ( 14 > 19 ) {    <-- LOOK
+      max = 19;         <-- HERE!
+    }
+  }
+  return max;           // 19
+
+*/
+```
+
+**Time Complexity** 
+Quadratic: O( n<sup>2</sup> )
+
+</br>
+
+#### Problems with Our Solution
+
+What if you had an input array that looked like this:
+```js 
+[1, 2, 5, 8, 1, 5, 1, 2, 5, 8, 1, 5, 4, 2, 1, 6, 4, 2, 1, 6, 2, 4, 2, 1, 6, 2, 6, 9, 2, 1, 8, 5, 6, 3, 2, 6, 9, 2, 1, 8, 5, 6, 3, 2, 6, 9, 2, 1, 8, 5, 6, 3, 1, 2, 5, 8, 1, 5, 1, 2, 5, 8, 1, 5, 4, 2, 1, 6, 4, 2, 1, 6, 2, 4, 2, 1, 1, 2, 5, 8, 1, 5, 1, 2, 5, 8, 1, 5, 4, 2, 1, 6, 4, 2, 1, 6, 2, 4, 2, 1, 1, 2, 5, 8, 1, 5, 1, 2, 5, 8, 1, 5, 4, 2, 1, 6, 4, 2, 1, 6, 2, 4, 2, 1, 8, 1, 5, 1, 2, 5, 8, 1, 5, 4, 2, 1, 6, 4, 2, 1, 6, 8, 1, 5, 1, 2, 5, 8, 1, 5, 4, 2, 1, 6, 4, 2, 1, 6, 8, 1, 5, 1, 2, 5, 8, 1, 5, 4, 2, 1, 6, 4, 2, 1, 6, 8, 1, 5, 1, 2, 5, 8, 1, 5, 4, 2, 1, 6, 4, 2, 1, 6, 8, 1, 5, 1, 2, 5, 8, 1, 5, 4, 2, 1, 6, 4, 2, 1, 6, 8, 1, 5, 1, 2, 5, 8, 1, 5, 4, 2, 1, 6, 4, 2, 1, 6, 8, 1, 5, 1, 2, 5, 8, 1, 5, 4, 2, 1, 6, 4, 2, 1, 6, 8, 1, 5, 1, 2, 5, 8, 1, 5, 4, 2, 1, 6, 4, 2, 1, 6, 8, 1, 5, 1, 2, 5, 8, 1, 5, 4, 2, 1, 6, 4, 2, 1, 6, 8, 1, 5, 1, 2, 5, 8, 1, 5, 4, 2, 1, 6, 4, 2, 1, 6] 
+```
+
+and you needed to find the largest sum of 10 consecutive digits?
+
+In the grand scheme of things, the largest sum of 10 would be a very small number when working with millions of pieces of data.
+
+This approach is extremely inefficient, hence the Quadratic analaysis.
+
+There are better ways to go about solving this problem and one inparticular is the **Sliding Window Pattern**
+
+</br>
+
+#### Using the Sliding Window Pattern
+
+```js
+// ===========================================================
+//  WRITE A FUNCTION WHICH ACCEPTS AN ARRAY OF INTEGERS AND A 
+//  NUMBER.
+
+//  THE FUNCTION SHOULD HAVE TO CALCULATE THE MAX SUM OF `n` 
+//  CONSECUTIVE ELEMENTS IN AN ARRAY.
+// ===========================================================
+
+function maxSubarraySum( array, number ) {
+  let maxSum = 0;
+  let tempSum = 0;
+
+  if ( array.length < number ) return null;
+
+  for ( let i = 0; i < number; i++ ) {
+    maxSum += array[ i ];
+  }
+
+  tempSum = maxSum;
+
+  for ( let i = number; i < array.length; i++ ) {
+    tempSum = tempSum - array[ i - number ] + array[ i ];
+    maxSum = Math.max( maxSum, tempSum );
+  }
+  return maxSum;
+}
+```
+
+**Sliding Window Breakdown**
+
+```js
+
+maxSubarraySum([2, 6, 9, 2, 1, 8, 5, 6, 3], 3);
+
+/*
+====================================
+     START OF INITIAL ITERATION
+====================================
+
+The first 3 digits get calculated just like before.
+
+However, instead of a second for loop beginning at the next position over 
+to calculate the sum of the next 3 digits...
+
+Use a variable pointing to the value of max sum of the first 3 digits to start.
+
+As each iteration moves inward (to the right) of the input array, 
+subtract the previous index from the value of that max sum variable,
+then add the current index to the value of that.
+
+[ 2, 6, 9, 2, 1, 8, 5, 6, 3 ], 3
+  .  .  .
+
+2 + 6 + 9 = (17)
+
+====================================
+          NEXT ITERATION
+====================================
+
+[ 2, 6, 9, 2, 1, 8, 5, 6, 3 ], 3
+  -  .  .  +
+
+17 - 2 + 2 = (17)
+
+====================================
+          NEXT ITERATION
+====================================
+
+[ 2, 6, 9, 2, 1, 8, 5, 6, 3 ], 3
+     -  .  .  +
+     
+17 - 6 + 1 = (12)
+
+====================================
+          NEXT ITERATION
+====================================
+
+[ 2, 6, 9, 2, 1, 8, 5, 6, 3 ], 3
+        -  .  .  +
+     
+12 - 9 + 8 = (11)
+
+====================================
+          NEXT ITERATION
+====================================
+
+[ 2, 6, 9, 2, 1, 8, 5, 6, 3 ], 3
+           -  .  .  +
+     
+11 - 2 + 5 = (14)
+
+====================================
+          NEXT ITERATION
+====================================
+
+[ 2, 6, 9, 2, 1, 8, 5, 6, 3 ], 3
+              -  .  .  +
+     
+14 - 1 + 6 = (19)
+
+====================================
+          NEXT ITERATION
+====================================
+
+[ 2, 6, 9, 2, 1, 8, 5, 6, 3 ], 3
+                 -  .  .  +
+     
+19 - 9 + 3 = (13)
+
+*/
+```
+**Time Complexity** 
+Linear: O( n )
+
+**Remember:** It's Linear because it only iterates over the input array one time.
