@@ -32,14 +32,16 @@ countUniqueValues([])                                      // 0 unique values
 countUniqueValues([1, 1, 1, 1, 2, 2])                      // 2 unique values
 countUniqueValues([-2, -1, -1, 0, 1])                      // 4 unique values
 
+// Time Complexity: O(n)
+// Space Complexity: O(n)
 
-// *********************
-//   CONCEPTUALIZATION
-// *********************
-
+//                 *************************************************
+//                                CONCEPTUALIZATION
+//                 *************************************************
 
 //    indices:     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10        
 countUniqueValues([1, 2, 3, 4, 4, 6, 7, 7, 7, 9, 9])       // 7 unique values
+
 /*
 
 ******************************************
