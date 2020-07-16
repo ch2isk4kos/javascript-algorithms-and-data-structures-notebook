@@ -16,10 +16,10 @@
 
 **Master Common Problem Solving Patterns**
 
-* Frequency Counters
-* Two Point Problems
+* **Frequency Counters**
+* **Two Point Problems**
 * Divide and Conquer
-* Sliding Window
+* **Sliding Window**
 * Dynamic Programming
 * Greedy Algorithms
 * Backtracking
@@ -821,3 +821,5 @@ maxSubarraySum([2, 6, 9, 2, 1, 8, 5, 6, 3], 3);   // 19
 Linear: O( n )
 
 **Remember:** It's Linear because it only iterates over the input array once.
+
+
