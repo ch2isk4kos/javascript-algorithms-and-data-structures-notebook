@@ -318,11 +318,16 @@ countUniqueValues([1, 2, 3, 4, 4, 6, 7, 7, 7, 9, 9])       // 7 unique values
 */
 
 function averagePair(array, target) {
+  let start = 0;
+  let end = array.length - 1;
   
-  // loop over the array and get calculate the averages
-  
-
-  return ;
+  while (start < end) {
+    let avg = (array[start] + array[end]) / 2;
+    if (avg === target) return true;
+    else if (avg < target) start++;
+    else end--;
+  }
+  return false;
 }
 
 averagePair([1, 2, 3], 1.5);                         // true
