@@ -2,8 +2,6 @@
 
 ---
 
-</br>
-
 ## Helper Method Approach
 
 _see_ 03-helper-method-recursion.md
@@ -380,3 +378,32 @@ function purelyCollectOddValues([10]) {
 
 */
 ```
+
+---
+
+## Pure Recursive Tips
+
+* For arrays, use methods like:
+  
+  * **slice**
+  * **spread operator**
+  * **concat**
+
+  These methods make copies of array so you don't have to mutate them.
+
+</br>
+
+* Strings are immutable so you need to use methods like:
+
+  * **slice**
+  * **substr**
+  * **substring**
+
+  These methods make copies of strings.
+
+</br>
+
+* To make copies of objects, use methods like:
+
+  * **Object.assign**
+  * **spread operator**
