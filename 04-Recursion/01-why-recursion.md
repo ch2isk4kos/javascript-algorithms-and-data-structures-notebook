@@ -152,3 +152,180 @@ countDown(5);
 Happy New Year!
 */
 ```
+
+---
+
+### Recursion Exercise
+
+```js
+// ===============================
+//  1. Comment the Base Case
+//  2. Comment the Change of Input
+// ===============================
+
+function sumRange(num) {
+  // 1. base case: normally involves a conditional
+  if (num === 1) return 1;
+  //              2. change of input: recursive call
+  return num + sumRange(num - 1);
+}
+
+sumRange(7);
+
+```
+
+#### Breakdown
+
+```js
+sumRange(7);
+
+/*
+==========================
+      FIRST ITERATION
+==========================
+
+function sumRange(7) {
+  if (7 === 1) return 1;
+  
+  return 7 + sumRange(7 - 1);
+}
+
+==========================
+      SECOND ITERATION
+==========================
+
+function sumRange(6) {
+  if (6 === 1) return 1;
+  
+  return 7 + sumRange(7 - 1);
+         6 + sumRange(6 - 1);
+}
+
+==========================
+      THIRD ITERATION
+==========================
+
+function sumRange(5) {
+  if (5 === 1) return 1;
+  
+  return 7 + sumRange(7 - 1);
+         6 + sumRange(6 - 1);
+         5 + sumRange(5 - 1);
+}
+
+==========================
+      FOURTH ITERATION
+==========================
+
+function sumRange(4) {
+  if (4 === 1) return 1;
+  
+  return 7 + sumRange(7 - 1);
+         6 + sumRange(6 - 1);
+         5 + sumRange(5 - 1);
+         4 + sumRange(4 - 1);
+}
+
+==========================
+      FIFTH ITERATION
+==========================
+
+function sumRange(3) {
+  if (3 === 1) return 1;
+  
+  return 7 + sumRange(7 - 1);
+         6 + sumRange(6 - 1);
+         5 + sumRange(5 - 1);
+         4 + sumRange(4 - 1);
+         3 + sumRange(3 - 1);
+}
+
+==========================
+      SIXTH ITERATION
+==========================
+
+function sumRange(2) {
+  if (2 === 1) return 1;
+  
+  return 7 + sumRange(7 - 1);
+         6 + sumRange(6 - 1);
+         5 + sumRange(5 - 1);
+         4 + sumRange(4 - 1);
+         3 + sumRange(3 - 1);
+         2 + sumRange(2 - 1);
+}
+
+==========================
+    SEVENTH ITERATION
+==========================
+
+function sumRange(1) {
+  if (1 === 1) return 1;        // true
+  
+  return 7 + sumRange(7 - 1);
+         6 + sumRange(6 - 1);
+         5 + sumRange(5 - 1);
+         4 + sumRange(4 - 1);
+         3 + sumRange(3 - 1);
+         2 + sumRange(2 - 1);
+         2 + sumRange(2 - 1);
+         1 === BASE CASE
+}
+
+==========================
+        THE MAGIC
+==========================
+
+  return 7 + sumRange(7 - 1);
+         6 + sumRange(6 - 1);
+         5 + sumRange(5 - 1);
+         4 + sumRange(4 - 1);
+         3 + sumRange(3 - 1);
+         2 + sumRange(2 - 1);
+         1 = BASE CASE
+
+  return 7 + sumRange(7 - 1);
+         6 + sumRange(6 - 1);
+         5 + sumRange(5 - 1);
+         4 + sumRange(4 - 1);
+         3 + sumRange(3 - 1);
+         2 + 1  = 3
+             -
+
+  return 7 + sumRange(7 - 1);
+         6 + sumRange(6 - 1);
+         5 + sumRange(5 - 1);
+         4 + sumRange(4 - 1);
+         3 + 3 = 6
+             -
+
+  return 7 + sumRange(7 - 1);
+         6 + sumRange(6 - 1);
+         5 + sumRange(5 - 1);
+         4 + 6 = 10
+             -
+
+  return 7 + sumRange(7 - 1);
+         6 + sumRange(6 - 1);
+         5 + 10 = 15
+             --
+
+  return 7 + sumRange(7 - 1);
+         6 + 15 = 21
+             --
+
+  return 7 + 21 = 28
+             --
+
+==========================
+          OUTPUT
+==========================
+
+function sumRange(num) {
+  if (num === 1) return 1;
+  
+  return 7 + 21;           // 28
+}
+  
+*/
+```
