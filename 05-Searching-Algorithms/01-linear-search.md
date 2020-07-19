@@ -2,17 +2,6 @@
 
 ---
 
-## JS Built-in Array Search Methods
-
-JavaScript has some search methods that you can use out of the box:
-
-* **indexOf**
-* **includes**
-* **find**
-* **findIndex**
-
----
-
 ## Linear Search
 
 iterates over each element of an array starting at the beginning - moving forward - or - beginning at the end and moving backwards.
@@ -38,7 +27,65 @@ let array = [ 7, 10, 3, 98, 15, 2, 10 ];
 
 //                          ✔︎
             [ 7, 10, 3, 98, 15, 2, 10 ];
+
+// return `true` or the index number [4]
 ```
+
+---
+
+## JS Built-in Array Search Methods
+
+JavaScript has some search methods that you can use out of the box:
+
+* **indexOf**
+* **includes**
+* **find**
+* **findIndex**
+
+---
+
+## Linear Search Pseudocode
+
+```js
+// a function that accepts an array and a value
+
+// loop through the array and check if the current array element
+// is equal to the value
+
+// if it is, return the index at which element is found
+
+// if the value is not found, return -1
+
+```
+
+### Linear Solution
+
+```js
+let arrayOfNumbers = [ 7, 10, 3, 98, 15, 2, 10, 15, 24, 33 ];
+
+// a function that accepts an array and a value
+function linearSearch(array, value) {
+  
+  // loop through the array and check if the current array element
+  // is equal to the value
+  for (let i = 0; i < array.length; i++) {
+
+    // if it is, return the index at which element is found
+    if (array[i] === value) {
+      return i;
+    }
+  }
+  // if the value is not found, return -1
+  return -1;
+}
+
+linearSearch(arrayOfNumbers, 24);   // [8]
+linearSearch(arrayOfNumbers, 16);   // -1
+```
+
+---
+
+</br>
 
 ```js
 
