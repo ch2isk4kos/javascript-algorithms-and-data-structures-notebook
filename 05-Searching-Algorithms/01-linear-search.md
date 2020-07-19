@@ -47,7 +47,7 @@ JavaScript has some search methods that you can use out of the box:
 ## Linear Search Pseudocode
 
 ```js
-// a function that accepts an array and a value
+// a function that accepts an array and a value as inputs
 
 // loop through the array and check if the current array element
 // is equal to the value
@@ -82,6 +82,23 @@ function linearSearch(array, value) {
 linearSearch(arrayOfNumbers, 24);   // [8]
 linearSearch(arrayOfNumbers, 16);   // -1
 ```
+
+**Time Complexity:**
+Linear: O( n )
+
+---
+
+## Linear Search: Big O
+
+As **`n`** grows - the length of the array or string - whatever you're working with,
+the amount of time to find what you're looking for grows.
+
+**Best Case Scenario:** O( 1 )
+You have a million items to search from and find the index that matches the value right away. Rare.
+
+**Worst Case Scenario:** O( n )
+You have a million items to search from and the matched index is near the end of the array.
+
 
 ---
 
