@@ -76,3 +76,29 @@ function recursiveRange(num) {
 }
 
 recursiveRange(20);   // 210
+
+// *******************************************************************************************************************
+// ******************************************          5.         ****************************************************
+// *******************************************************************************************************************
+
+/*
+=======================================================
+  WRITE A FUNCTION WHICH ACCEPTS A NUMBER AND RETURNS
+  THE nth NUMBER IN THE FIBONACCI SEQUENCE.
+
+  THE FIBONACCI SEQUENCE IS A SERIES OF WHOLE NUMBERS
+  1, 1, 2, 3, 5, 8, ... WHICH STARTS WITH 1 AND 1
+  AND WHERE EVERY NUMBER THEREAFTER IS EQUAL TO THE
+  SUM OF THE PREVIOUS TWO NUMBERS. 
+=======================================================
+*/
+
+function fibonacci(n){
+  if (n <= 2) return 1;
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+fibonacci(4);    // 3
+fibonacci(10);   // 55
+fibonacci(20);   // 6765
+fibonacci(35);   // 9227465
