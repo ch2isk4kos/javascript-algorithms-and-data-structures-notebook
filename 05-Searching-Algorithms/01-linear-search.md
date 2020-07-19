@@ -93,12 +93,13 @@ Linear: O( n )
 As **`n`** grows - the length of the array or string - whatever you're working with,
 the amount of time to find what you're looking for grows.
 
+_Remeber:_ Big O Notation is a fuzzy search that considers the worst possible case.
+
 **Best Case Scenario:** O( 1 )
 You have a million items to search from and find the index that matches the value right away. Rare.
 
 **Worst Case Scenario:** O( n )
 You have a million items to search from and the matched index is near the end of the array.
-
 
 ---
 
