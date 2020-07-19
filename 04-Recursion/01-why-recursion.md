@@ -329,3 +329,15 @@ function sumRange(num) {
   
 */
 ```
+
+---
+
+## Fun Fact
+
+If you ever write a recursive function and come across the error:
+
+**`Uncaught RangeError: Maxiumum call stack size exceeded`**
+
+This is known as a **Stack Overflow**. It refers to an infinite loop that never stops running.
+
+*Remember to check your return statement*.
