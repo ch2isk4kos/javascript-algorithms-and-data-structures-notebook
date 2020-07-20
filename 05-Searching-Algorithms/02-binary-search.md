@@ -81,7 +81,7 @@ The while loop is utilitzed when the exact number of iterations unknown.
 
 ```
 
-### Binary Search Solution
+## Binary Search: Solution
 
 ```js
 const arrayOfNums = [ 2, 7, 8, 16, 23, 24, 33, 34, 99, 101, 120, 155, 175, 250 ];
@@ -119,7 +119,7 @@ function binarySearch(array, value) {
 }
 ```
 
-#### Breakdown
+### Breakdown
 
 ```js
 binarySearch(arrayOfNums, 175)
@@ -204,6 +204,26 @@ idx   0  1  2   3   4   5   6   7   8    9   10   11   12   13
     }
 
 */
+```
+
+### Binary Search: Refactored Solution
+
+```js
+const arrayOfNums = [ 2, 7, 8, 16, 23, 24, 33, 34, 99, 101, 120, 155, 175, 250 ];
+
+function binarySearch(array, value) {
+  let left = 0;
+  let right = array.length - 1;
+  let mid = Math.floor((left + right) / 2);
+  
+  while (array[mid] !== value && left <= right) {
+    if (value < array[mid]) right = mid - 1;
+    else left = mid + 1;
+    mid = Math.floor((left + right) / 2);
+  }
+
+  if array[mid] === value ? mid : -1;
+}
 ```
 
 ---
