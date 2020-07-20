@@ -206,7 +206,9 @@ idx   0  1  2   3   4   5   6   7   8    9   10   11   12   13
 */
 ```
 
-### Binary Search: Refactored Solution
+**Time Complexity** O ( log <sup>n</sup> )
+
+## Binary Search: Refactored Solution
 
 ```js
 const arrayOfNums = [ 2, 7, 8, 16, 23, 24, 33, 34, 99, 101, 120, 155, 175, 250 ];
@@ -227,6 +229,18 @@ function binarySearch(array, value) {
 ```
 
 ---
+
+## Binary Search: Big O
+
+With a binary search, as the the size of the sorted array grows, how does the time complexity grow in relation?
+
+**Best Case Scenario:** O ( 1 )
+**Worse Case Scenario:** O ( log <sub>n</sub> )
+
+log <sub>2</sub> meaning **2<sup>?</sup> = `n`**
+
+---
+
 </br>
 
 ```js
