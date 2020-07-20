@@ -35,3 +35,51 @@ Comparison Sorting Algorithms:
 
 Sorting Algorithms with Animations [ and Code ]:
 <https://emre.me/algorithms/sorting-algorithms/>
+
+---
+
+## JavaScript Built-in Sorting Methods
+
+JavaScript has a built-in method called `sort` that doesn't work the way you may think.
+
+```js
+// works as expected with strings:
+
+["Structures", "Data", "Algorithms", "And"].sort();
+
+// ["Algorithms", "And", "Data", "Structures"]
+```
+
+```js
+// works different with numbers:
+
+[3, 8, 24, 32, 2, 99, 25, 80, 15].sort();
+
+// [15, 2, 24, 25, 3, 32, 8, 80, 99]
+
+// notice the pattern
+```
+
+The default string order is according to string Unicode code points.
+
+<https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort>
+
+Unicode is used to represent strings. So every item in the array is converted to a string and the sorted.
+
+</br>
+
+### Specify How You Want JavaScript to Sort
+
+The JavaScript `sort` method accepts an optional _comparator_ function that lets it know what you want to sort.
+
+The comparator analyzes a pair of elemens  (`a` and `b`)  and determines their sort order based on the return value.
+
+```js
+const nums = [3, 8, 24, 32, 2, 99, 25, 80, 15];
+
+nums.sort(function(a, b) {
+  return a - b;
+});
+
+// [ 2, 3, 8, 15, 24, 25, 32, 80, 99 ]
+```
