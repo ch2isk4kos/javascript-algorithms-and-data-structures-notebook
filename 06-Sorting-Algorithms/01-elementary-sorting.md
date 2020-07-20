@@ -25,7 +25,12 @@ sort([5, 2, 7, 6, 8, 1, 3, 9, 4]);
 
 There are many ways to sort a collect and each approach has its advantages and disadvantages.
 
+</br>
+
 ### Sorting Algorithms: Resources
+
+Visualgo:
+<https://visualgo.net/en>
 
 15 Sorting Algorithms in 6 Minutes:
 <https://www.youtube.com/watch?v=kPRA0W1kECg>
@@ -33,7 +38,7 @@ There are many ways to sort a collect and each approach has its advantages and d
 Comparison Sorting Algorithms:
 <https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html>
 
-Sorting Algorithms with Animations [ and Code ]:
+Sorting Algorithms with Animations [ and Code Snippets ]:
 <https://emre.me/algorithms/sorting-algorithms/>
 
 ---
