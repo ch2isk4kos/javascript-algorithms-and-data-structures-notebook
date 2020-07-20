@@ -88,3 +88,24 @@ nums.sort(function(a, b) {
 
 // [ 2, 3, 8, 15, 24, 25, 32, 80, 99 ]
 ```
+
+---
+
+## Swapping
+
+Many sorting algorithms involve some sort of swapping functionality to determine the order.
+
+```js
+// ES5
+function swap(array, index1, index2) {
+  let temp = array[index1];
+  
+  array[index1] = array[index2];
+  array[index2] = temp;
+}
+
+// ES2015
+const swap = (arr, idx1, idx2) => {
+  [ arr[idx1], arr[idx2] ] = arr[idx2], arr[idx1];
+}
+```
