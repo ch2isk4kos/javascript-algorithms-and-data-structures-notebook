@@ -217,7 +217,7 @@ bubbleSorting([18, 2, 22, 4, 50]);
 */
 ```
 
-**Time Complexity:** 
+**Time Complexity:**
 Quadratic: O ( n<sup>2</sup> )
 
 </br>
