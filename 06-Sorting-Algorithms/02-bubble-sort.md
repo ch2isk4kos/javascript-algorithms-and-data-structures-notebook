@@ -217,8 +217,11 @@ bubbleSorting([18, 2, 22, 4, 50]);
 */
 ```
 
+**Time Complexity:** 
+Quadratic: O ( n<sup>2</sup> )
+
 </br>
-### Bubble Sort: Solution
+### Bubble Sort: ES 2015 Syntax
 
 ```js
 // ES2015
@@ -243,6 +246,75 @@ bubbleSorting([18, 2, 22, 4, 50]);
 
 // [ 2, 4, 18, 22, 50 ];
 ```
+
+</br>
+
+## Bubble Sort: Optimization
+
+There is a very specific case where if the data is already sorted or a majority of the collection is already sorted, our solution above would still continue to compare the elements even though no swapping is taking place. That's a waste of time.
+
+You can short circuit your code and check to see if on the last comparison, a swap took place. If it didn't, you can break out of the loop.
+
+### `noSwap` variable
+
+The `noSwaps` variable starts at `true`.
+If you swap at anytime, `noSwap` is set to false through out that current iteration.
+On the following iteration, `noSwaps` is set back to true.
+
+```js
+function fastBubble(array) {
+  let temnp = 0;
+  let noSwaps;
+
+  for (let i = array.length; i > 0; i--) {
+    noSwaps = true;
+    for (let j = 0; j < i - 1; j++) {
+      console.log(array, array[j], array[j+1])
+      if (array[j] > array[j+1]) {
+        // swapping functionality
+        temp = array[j];
+        array[j] = array[j+1];
+        array[j+1] = temp;
+        noSwaps = false;
+      }
+    }
+    if (noSwaps) break;
+  }
+  return array;
+}
+
+fastBubble([7, 2, 24, 33, 34]);
+
+/*
+
+=================================
+         FIRST ITERATION
+=================================
+
+[ 7, 2, 24, 33, 34 ] 7 2
+[ 2, 7, 24, 33, 34 ] 7 24
+[ 2, 7, 24, 33, 34 ] 24 33
+[ 2, 7, 24, 33, 34 ] 33 34
+
+=================================
+        SECOND ITERATION
+=================================
+
+[ 2, 7, 24, 33, 34 ] 2 7
+[ 2, 7, 24, 33, 34 ] 7 24
+[ 2, 7, 24, 33, 34 ] 24 33
+
+=================================
+              OUTPUT
+=================================
+
+[ 2, 7, 24, 33, 34 ]
+
+*/
+
+```
+
+**Super** fast.
 
 </br>
 
