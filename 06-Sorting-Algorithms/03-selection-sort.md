@@ -64,6 +64,8 @@ Output:
 */
 ```
 
+---
+
 </br>
 
 ## Selection Sort: Pseudocode
@@ -74,6 +76,8 @@ Output:
 // if a smaller value is found, designate it as the minimum value and continue
 // if the minimum is not the value (index) you originally began with, swap values
 ```
+
+</br>
 
 ## Selection Sort: Solution
 
@@ -147,6 +151,8 @@ Output:
 */
 ```
 
+</br>
+
 ### Selection Sort: ES2015 Solution
 
 ```js
@@ -172,12 +178,18 @@ function selectionSort(array) {
 }
 ```
 
-<br>
+---
+
+</br>
 
 ## Selection Sort: Big O Notation
 
 **Time Complexity:**
 Quadratic: O( n<sup>2</sup> )
+
+Selection Sort is not very efficient compared to other algorithms. One use case that its good for is whenever you need a miniumum amount of swaps when comparing things.
+
+---
 
 </br>
 
