@@ -229,7 +229,9 @@ As `n` grew to 32, there were 5 splits.
 
 When `n = 8`, there were 3 splits.
 
-That relationship is defined as **O ( n log<sub>n</sub> )**
+That relationship is defined as **O ( n log n )**
+
+O ( log n ) decompositions + O ( n )  comparisions per decomposition = **O ( n log n )**
 
 ---
 
