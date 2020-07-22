@@ -194,7 +194,52 @@ merge(left = [2, 8, 15, 25], right = [1, 10, 20, 40]);
 | ----------- | --------- | ----------- | ----------- | ----------- |
 | O ( n log<sub>n</sub> ) | O ( n log<sub>n</sub> ) | O ( n log<sub>n</sub> ) | O( n ) |
 
+</br>
+
 #### O ( n log<sub>n</sub> )
 
 Merge Sort doesn't care what the data looks like. It simply splits up a linear array over and over and merges items no matter what the data is.
 
+Say you had 8 items in an array.
+`n = 8`
+
+How many times would you have to split to get single element arrays?
+3 splits
+
+How about an array of 32 items?
+
+```js
+/*
+                                32
+                                /\
+                              16 16
+                              /\ /\
+                             8 8 8 8
+                            /\/\/\/\/\
+                         4 4 4 4 4 4 4 4
+                          /\/\/\/\/\/\/\
+                 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+                        /\/\/\/\/\/\/\/\/\
+  1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+
+*/
+```
+
+As `n` grew to 32, there were 5 splits.
+
+When `n = 8`, there were 3 splits.
+
+That relationship is defined as **O ( n log<sub>n</sub> )**
+
+---
+
+## Merge Sort: Resources
+
+Educba: Merge Sort in JavaScript
+<https://www.educba.com/merge-sort-in-javascript/>
+
+Tim Han: Merge Sort Alogorithm in JavaScript
+<https://medium.com/javascript-in-plain-english/javascript-merge-sort-3205891ac060>
+
+w3resource: JavaScript Searching and Sorting Algorithms - Merge Sort
+<https://www.w3resource.com/javascript-exercises/searching-and-sorting-algorithm/searching-and-sorting-algorithm-exercise-2.php>
