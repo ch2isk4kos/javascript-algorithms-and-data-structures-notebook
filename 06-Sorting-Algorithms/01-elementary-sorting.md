@@ -1,4 +1,4 @@
-# Sorting Algorithms
+# Sorting Algorithms: Elementary Algorithms
 
 ---
 
