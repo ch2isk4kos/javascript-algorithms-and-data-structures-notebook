@@ -84,8 +84,6 @@ function insertionSort(array) {
 insertionSort([ 34, 24, 7, 33, 16, 2, 8 ]);
 ```
 
-</br>
-
 ### Breakdown
 
 ```js
