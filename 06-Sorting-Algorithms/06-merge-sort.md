@@ -132,8 +132,6 @@ function mergeSort(array) {
   // pass in each half of the array to the abstracted functionality
   return mergeArrays(left, right);
 }
-
-mergeSort([2, 15, 25, 4, 18, 30, 35]);
 ```
 
 ```js
@@ -154,6 +152,8 @@ merge(left = 15  right = 2)  merge(left = 25  right = 8)
          [2, 15]                          [8, 25]
                 \                          /
         merge(left = [2, 15], right = [8, 25])
+                  \                      /
+                   left =  [2, 8, 15, 25]
 
 =====================================
               SECOND HALF
@@ -170,6 +170,16 @@ merge(left = 40  right = 10)  merge(left = 1  right = 20)
     left = [10, 40]              right = [1, 20]
                 \                 /
        merge(left = [10, 40], right = [1, 20])
+                  \             /
+             right = [1, 10, 20, 40]
+
+=====================================
+              MERGE HALVES
+=====================================
+
+merge(left = [2, 8, 15, 25], right = [1, 10, 20, 40]);
+                    /             \
+      result = [1, 2, 8, 10, 15, 20, 25, 40]
 
 */
 ```
@@ -177,3 +187,14 @@ merge(left = 40  right = 10)  merge(left = 1  right = 20)
 ---
 
 ## Merge Sort: Big O Notation
+
+</br>
+
+| Best Case Time | Average Time | Worse Case Time | Space Complexity |
+| ----------- | --------- | ----------- | ----------- | ----------- |
+| O ( n log<sub>n</sub> ) | O ( n log<sub>n</sub> ) | O ( n log<sub>n</sub> ) | O( n ) |
+
+#### O ( n log<sub>n</sub> )
+
+Merge Sort doesn't care what the data looks like. It simply splits up a linear array over and over and merges items no matter what the data is.
+
