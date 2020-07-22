@@ -1,4 +1,4 @@
-# Sorting Algorithms: Elementary Sorting
+# Sorting Algorithms
 
 ---
 
@@ -25,9 +25,9 @@ sort([5, 2, 7, 6, 8, 1, 3, 9, 4]);
 
 There are many ways to sort a collect and each approach has its advantages and disadvantages.
 
-</br>
+---
 
-### Sorting Algorithms: Resources
+## Sorting Algorithms: Resources
 
 Visualgo:
 <https://visualgo.net/en>
@@ -109,3 +109,11 @@ const swap = (arr, idx1, idx2) => {
   [ arr[idx1], arr[idx2] ] = arr[idx2], arr[idx1];
 }
 ```
+
+---
+
+## Elementary Sorting Algorithms
+
+* Bubble Sort
+* Selection Sort
+* Insertion Sort
