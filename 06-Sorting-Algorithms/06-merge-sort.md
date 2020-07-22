@@ -33,14 +33,12 @@ const array = [ 8, 3, 5, 1, 7, 6, 2, 4 ];
 
 ---
 
-</br>
-
 ## Merging Arrays
 
 **NOTE:** both arrays need to be sorted.
 
 ```js
-function mergeSort(array1, array2) {
+function mergeArrays(array1, array2) {
   let result = [];
   let i = 0;
   let j = 0;
@@ -68,7 +66,7 @@ function mergeSort(array1, array2) {
   return result;
 }
 
-mergeSort([2, 15, 25], [4, 18, 30, 35]);
+mergeArrays([2, 15, 25], [4, 18, 30, 35]);
 ```
 
 ### Breakdown
@@ -109,7 +107,32 @@ mergeSort([2, 15, 25], [4, 18, 30, 35]);
 
 ---
 
-</br>
+## Merge Sort: Pseudocode
 
-## Writing Merge Sort
+```js
+// Break up the array into halves until you have empty or 1 element arrays
+// Merge those arrays with other sorted arrays and combine into one result.
+// return the merged array.
+```
+
+## Merge Sort: Solution
+
+```js
+function mergeSort(array) {
+  // base case
+  if (array.length <= 1) return array;
+
+  // set the mid point of the input array
+  let mid = Math.floor(array.length / 2);
+  
+  // split the array into two parts
+  let left = array.slice(0, mid);
+  let right = array.slice(mid);
+
+  // pass in each half of the array to the abstracted functionality
+  return mergeArrays(left, right);
+}
+
+mergeSort([2, 15, 25, 4, 18, 30, 35]);
+```
 
