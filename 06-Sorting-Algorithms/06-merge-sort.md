@@ -125,9 +125,9 @@ function mergeSort(array) {
   // set the mid point of the input array
   let mid = Math.floor(array.length / 2);
   
-  // split the array into two parts
-  let left = array.slice(0, mid);
-  let right = array.slice(mid);
+  // split the array into two parts a use recursion on each half
+  let left = mergeSort(array.slice(0, mid));
+  let right = mergeSort(array.slice(mid));
 
   // pass in each half of the array to the abstracted functionality
   return mergeArrays(left, right);
@@ -136,3 +136,44 @@ function mergeSort(array) {
 mergeSort([2, 15, 25, 4, 18, 30, 35]);
 ```
 
+```js
+mergeSort([15, 2, 25, 8, 40, 10, 1, 20]);
+/*
+=====================================
+              FIRST HALF
+=====================================
+
+            mergeSort([15, 2, 25, 8])
+             /                      \
+        mergeSort[15, 2]      mergeSort[25, 8]
+           /  \                     /        \
+mergeSort[15] mergeSort[2]   mergeSort[25] mergeSort[8]
+         /      \                 /            \
+merge(left = 15  right = 2)  merge(left = 25  right = 8)
+         \      /                          \   /
+         [2, 15]                          [8, 25]
+                \                          /
+        merge(left = [2, 15], right = [8, 25])
+
+=====================================
+              SECOND HALF
+=====================================
+
+            mergeSort([40, 10, 1, 20])
+             /                      \
+        mergeSort[40, 10]      mergeSort[1, 20]
+           /  \                     /        \
+mergeSort[40] mergeSort[10]   mergeSort[1] mergeSort[20]
+         /      \                 /            \
+merge(left = 40  right = 10)  merge(left = 1  right = 20)
+         \      /                 \            /
+    left = [10, 40]              right = [1, 20]
+                \                 /
+       merge(left = [10, 40], right = [1, 20])
+
+*/
+```
+
+---
+
+## Merge Sort: Big O Notation
