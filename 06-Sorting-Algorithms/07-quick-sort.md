@@ -156,6 +156,12 @@ pivot([4, 8, 2, 1, 5, 7, 6, 3]);    // 3 [ index ]
 
 ---
 
+## Quick Sort: Solution
+
+```js
+
+```
+
 ## Quick Sort: Resources
 
 Guru 99: Quick Sort in JavaScript
