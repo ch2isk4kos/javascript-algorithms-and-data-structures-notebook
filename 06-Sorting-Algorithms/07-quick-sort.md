@@ -151,7 +151,7 @@ function pivot(array) {
   return swapIndex;
 }
 
-pivot([4, 8, 2, 1, 5, 7, 6, 3]);
+pivot([4, 8, 2, 1, 5, 7, 6, 3]);    // 3 [ index ]
 ```
 
 ---
