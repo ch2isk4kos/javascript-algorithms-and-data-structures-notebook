@@ -94,15 +94,15 @@ buckets:
 New list:
             [ 2001, 1024,  25,  96,   7, 201, 500, 7960, 1956, 1999 ]
 
-NOTE: this process goes on for however many digits the largest number has
+NOTE: this process goes on for however many digits the largest number has (4)
 
 buckets:
          500
          201
           96    1999
           25    1956
-          7     1024    2001                   7960  
-      |_____| |_____| |_____| |_| |_| |_| |_| |____| |_| |______|
+           7    1024    2001                   7960  
+       |____| |_____| |_____| |_| |_| |_| |_| |____| |_| |______|
          0       1       2     3   4   5   6    7     8      9
 
 New list:
