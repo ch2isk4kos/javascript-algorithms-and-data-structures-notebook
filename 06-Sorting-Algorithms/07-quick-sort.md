@@ -180,14 +180,22 @@ function quickSort(array, left=0, right=array.length-1) {
   return array;
 }
 
-quickSort([4, 6, 9, 1, 2, 5, 3]);
-/*
-
-
-*/
+quickSort([4, 6, 9, 1, 2, 5]);
 ```
 
+---
 
+## Quick Sort: Big O
+
+</br>
+
+| Best Case Time | Average Time | Worse Case Time | Space Complexity |
+| ----------- | --------- | ----------- | ----------- | ----------- |
+| O ( n log<sub>n</sub> ) | O ( n log<sub>n</sub> ) | O ( n<sup>2</sup> ) | O( log<sub>n</sub> ) |
+
+</br>
+
+---
 
 ## Quick Sort: Resources
 
