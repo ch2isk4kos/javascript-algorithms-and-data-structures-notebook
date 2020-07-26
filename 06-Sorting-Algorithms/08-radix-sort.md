@@ -226,15 +226,19 @@ getMaxDigits([7, 77, 7777, 777]);     // 4
 getMaxDigits([10, 24, 36, 44]);       // 2
 ```
 
+---
+
+## Radix Sort: Pseudocode
+
 ```js
-getMaxDigits(array);
-
-/*
-
-Math.max() => returns whichever of the two numbers is greater.
-
-*/
-
+// Define a function that accepts a list of numbers
+// Find how many digits the largest number of the list has
+// Loop from k = 0 up to the largest number of digits
+// For each iteration:
+//  create buckets for each digit (0 to 9)
+//  place each number in the corresponding bucket based on its kth digit
+// Replace the existing array with the values from the buckets from 0 to 9
+// Return the list
 ```
 
 ---
