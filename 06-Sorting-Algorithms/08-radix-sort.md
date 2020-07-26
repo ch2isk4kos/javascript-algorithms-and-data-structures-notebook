@@ -124,6 +124,8 @@ In order to write the main algorithm of Radix Sort, you need to write helper met
 
 returns the digit of the input `number` at the given input `position` value.
 
+</br>
+
 ```js
 function getPosition(num, i) {
   return Math.floor(Math.abs(num) / Math.pow(10, i)) % 10;
@@ -163,10 +165,75 @@ function getDigit(7323, 2) {
 
 returns the number of digits of the input number.
 
+</br>
+
 ```js
-digitCount(1);      // 1
-digitCount(25);     // 2
-digitCount(314);    // 3
+function getDigitCount(number) {
+  if (number === 0) return 1;
+  // log10: 10 to ? power gives us the input number?
+  return Math.floor(Math.log10(Math.abs(number))) + 1;
+}
+
+getDigitCount(1);      // 1
+getDigitCount(25);     // 2
+getDigitCount(314);    // 3
+```
+
+```js
+getDigitCount(423);
+
+/*
+
+10 to ? power equals the input number of 423?
+
+function getDigitCount(423) {
+  if (number === 0) return 1;
+         Math.floor(Math.log10(Math.abs(423))) + 1;
+         Math.floor(Math.log10(423)) + 1;
+         Math.floor(2.6263403673750423) + 1;
+         2 + 1;
+  return 3
+}
+
+Math.log10(423) => Math.floor(2.6263403673750423) => 2 + 1 = 3 digits
+
+*/
+
+```
+
+</br>
+
+### `getMaxDigits(array)`
+
+given an array of numbers, returns the number of digits of the largest number(s) in the list.
+
+</br>
+
+```js
+function getMaxDigits(array) {
+  let maxDigits = 0;
+  
+  for(let i = 0; i < array.length; i++) {
+    //          Math.max(a, b) returns the greater of the two input numbers
+    maxDigits = Math.max(maxDigits, getDigitCount(array[i]));
+  }
+
+  return maxDigits;
+}
+
+getMaxDigits([15000, 1500, 150]);     // 5
+getMaxDigits([7, 77, 7777, 777]);     // 4
+getMaxDigits([10, 24, 36, 44]);       // 2
+```
+
+```js
+getMaxDigits(array);
+
+/*
+
+Math.max() => returns whichever of the two numbers is greater.
+
+*/
 
 ```
 
