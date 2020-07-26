@@ -158,9 +158,36 @@ pivot([4, 8, 2, 1, 5, 7, 6, 3]);    // 3 [ index ]
 
 ## Quick Sort: Solution
 
-```js
+The pivot helper has been written and is waiting to be passed an array,
+and it sets the pivot number to the first element. It then sorts all of the element values
+that are less than the pivot on the left side and that are greater than on the right side.
+Then it returns an index of the first pivot point.
 
+When the helper returns the index of the updated pivot point, `quickSort` will then
+recursively call the pivot helper on the subarray to the left of that index
+and the subarray to the right of that index.
+
+```js
+function quickSort(array, left=0, right=array.length-1) {
+  // base case
+  if (left < right) {
+    let pivotIndex = pivot(arr, left, right);   // 3
+    // left
+    quickSort(array, left, pivotIndex - 1);
+    // right
+    quickSort(array, pivotIndex + 1, right);
+  }
+  return array;
+}
+
+quickSort([4, 6, 9, 1, 2, 5, 3]);
+/*
+
+
+*/
 ```
+
+
 
 ## Quick Sort: Resources
 
