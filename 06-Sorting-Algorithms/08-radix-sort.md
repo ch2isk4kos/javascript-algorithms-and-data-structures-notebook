@@ -114,6 +114,64 @@ New list:
 
 ---
 
+## Radix Sort: Helpers
+
+In order to write the main algorithm of Radix Sort, you need to write helper methods to faciliate the process.
+
+</br>
+
+### `getPosition(number, position)`
+
+returns the digit of the input `number` at the given input `position` value.
+
+```js
+function getPosition(num, i) {
+  return Math.floor(Math.abs(num) / Math.pow(10, i)) % 10;
+}
+
+getPosition(12345, 0);   // 5
+getPosition(12345, 1);   // 4
+getPosition(12345, 2);   // 3
+getPosition(12345, 3);   // 2
+getPosition(12345, 4);   // 1
+getPosition(12345, 5);   // 0
+```
+
+```js
+getPosition(7323, 2);
+
+/*
+
+The value in 'position 2' is 3.
+In a base ten system - 3 is in the 100s place
+
+function getDigit(7323, 2) {
+         Math.floor(Math.abs(7323) / Math.pow(10, 2)) % 10;
+         Math.floor(73) % 10;
+  return 3;
+}
+
+7323 / 100 => 73.23 % 10 => 70 Remainder 3 = 3
+
+*/
+
+```
+
+</br>
+
+### `getDigitCount(number)`
+
+returns the number of digits of the input number.
+
+```js
+digitCount(1);      // 1
+digitCount(25);     // 2
+digitCount(314);    // 3
+
+```
+
+---
+
 ## Radix Sort: Resources
 
 Brilliant: Radix Sort
