@@ -127,8 +127,8 @@ returns the digit of the input `number` at the given input `position` value.
 </br>
 
 ```js
-function getDigit(num, i) {
-  return Math.floor(Math.abs(num) / Math.pow(10, i)) % 10;
+function getDigit(number, index) {
+  return Math.floor(Math.abs(number) / Math.pow(10, index)) % 10;
 }
 
 getDigit(12345, 0);   // 5
@@ -239,6 +239,51 @@ getMaxDigitCount([10, 24, 36, 44]);       // 2
 //  place each number in the corresponding bucket based on its kth digit
 // Replace the existing array with the values from the buckets from 0 to 9
 // Return the list
+```
+
+---
+
+## Radix Sort: Solution
+
+```js
+function radixSort(array) {
+  let maxDigitCount = getMaxDigitCount(array);
+  console.log("max digit count ", maxDigitCount);
+
+  for (let k = 0; k < maxDigitCount; k++) {
+    let buckets = Array.from({ length: 10 }, () => []);
+
+    for (let i = 0; i < array.length; i++) {
+      // buckets[getDigit(array[i], k)].push(array[i]);
+      let digit = getDigit(array[i], k);
+      buckets[digit].push(array[i]);
+    }
+    console.log("buckets ", buckets);
+    array = [].concat(...buckets);
+    console.log("array ", array);
+  }
+  return array;
+}
+
+radixSort([1950, 10, 24, 2008, 7, 1962, 575, 2020, 1, 1978, 1989, 365, 1996, 827, 2016])
+
+/*
+[ 1,
+  7,
+  10,
+  24,
+  365,
+  575,
+  827,
+  1950,
+  1962,
+  1978,
+  1989,
+  1996,
+  2008,
+  2016,
+  2020 ]
+*/
 ```
 
 ---
