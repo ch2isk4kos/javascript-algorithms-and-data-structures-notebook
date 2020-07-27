@@ -150,6 +150,11 @@ class SinglyLinkedList {
     this.tail.next = null;
     this.length--;
 
+    if (this.length === 0) {
+      this.head = null;
+      this.tail = null;
+    }
+
     console.log("new length: ", this.length);
 
     return current
