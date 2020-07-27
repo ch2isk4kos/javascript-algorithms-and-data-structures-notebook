@@ -15,6 +15,8 @@ JavaScript has never been known for its Object-Orientated Programming. OOP based
 The **`class`** keyword syntax creates a constant so you cannot redefine it.
 A **`constructor`** is a special method needed to instantiate new instances of the class.
 
+**NOTE:** this keyword **`this`** refers to the instance - object created from the class.
+
 </br>
 
 ```js
@@ -101,6 +103,8 @@ The `static` keyword allows you to define functionality that is pertinant to cla
 
 </br>
 
+#### example1
+
 ```js
 class Student {
   constructor(first, last, email) {
@@ -126,3 +130,56 @@ let student3 = new Student('Lisa', 'Simpson', 'leesimpson@student.edu');
 Student.EmailStudents([student1, student2, student3]);
 // > 'Students Have Been Emailed.'
 ```
+
+</br>
+
+#### example 2
+
+```js
+class Point {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+  }
+
+  static distance(a, b) {
+    const dx = a.x - b.x;
+    const dy = a.y - b.y;
+    return Math.hypot(dx, dy);
+  }
+}
+
+const p1 = new Point(10, 24);
+const p2 = new Point(16, 34);
+
+Point.distance(p1, p2);
+// 11.6619037896906
+```
+
+---
+
+## Data Structures with classes
+
+</br>
+
+```js
+class DataStructure {
+  constructor() {
+    // what default properties should it have?
+  }
+
+  instanceMethod() {
+    // can be called from the instance of the class
+  }
+}
+```
+
+---
+
+## `class` Keyword Recap
+
+* A **`class`** is a blueprint that create objects known as instances.
+* Classes are created with the **`new`** keyword.
+* The **`constructor`** function runs when a new instance of a class is instantiated.
+* Instance methods can be added to classes similar to methods in objects.
+* You can add class methods by using the **`static`** keyword.
