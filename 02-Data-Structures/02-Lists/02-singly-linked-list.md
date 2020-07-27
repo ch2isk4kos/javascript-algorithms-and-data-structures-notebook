@@ -180,3 +180,6 @@ Node { value: '!', next: null }
 
 **GeeksforGeeks**
 <https://www.geeksforgeeks.org/data-structures/linked-list/singly-linked-list/>
+
+**HackerEarth**
+<https://www.hackerearth.com/practice/data-structures/linked-list/singly-linked-list/tutorial/>
