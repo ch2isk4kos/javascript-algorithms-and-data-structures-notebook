@@ -120,27 +120,27 @@ In order to write the main algorithm of Radix Sort, you need to write helper met
 
 </br>
 
-### `getPosition(number, position)`
+### `getDigit(number, position)`
 
 returns the digit of the input `number` at the given input `position` value.
 
 </br>
 
 ```js
-function getPosition(num, i) {
+function getDigit(num, i) {
   return Math.floor(Math.abs(num) / Math.pow(10, i)) % 10;
 }
 
-getPosition(12345, 0);   // 5
-getPosition(12345, 1);   // 4
-getPosition(12345, 2);   // 3
-getPosition(12345, 3);   // 2
-getPosition(12345, 4);   // 1
-getPosition(12345, 5);   // 0
+getDigit(12345, 0);   // 5
+getDigit(12345, 1);   // 4
+getDigit(12345, 2);   // 3
+getDigit(12345, 3);   // 2
+getDigit(12345, 4);   // 1
+getDigit(12345, 5);   // 0
 ```
 
 ```js
-getPosition(7323, 2);
+getDigit(7323, 2);
 
 /*
 
@@ -203,14 +203,14 @@ Math.log10(423) => Math.floor(2.6263403673750423) => 2 + 1 = 3 digits
 
 </br>
 
-### `getMaxDigits(array)`
+### `getMaxDigitCount(array)`
 
 given an array of numbers, returns the number of digits of the largest number(s) in the list.
 
 </br>
 
 ```js
-function getMaxDigits(array) {
+function getMaxDigitCount(array) {
   let maxDigits = 0;
   
   for(let i = 0; i < array.length; i++) {
@@ -221,9 +221,9 @@ function getMaxDigits(array) {
   return maxDigits;
 }
 
-getMaxDigits([15000, 1500, 150]);     // 5
-getMaxDigits([7, 77, 7777, 777]);     // 4
-getMaxDigits([10, 24, 36, 44]);       // 2
+getMaxDigitCount([15000, 1500, 150]);     // 5
+getMaxDigitCount([7, 77, 7777, 777]);     // 4
+getMaxDigitCount([10, 24, 36, 44]);       // 2
 ```
 
 ---
