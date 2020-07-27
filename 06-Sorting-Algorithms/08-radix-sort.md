@@ -288,6 +288,23 @@ radixSort([1950, 10, 24, 2008, 7, 1962, 575, 2020, 1, 1978, 1989, 365, 1996, 827
 
 ---
 
+## Radix Sort: Big O Notation
+
+</br>
+
+| Best Case Time | Average Time | Worse Case Time | Space Complexity |
+| ----------- | --------- | ----------- | ----------- | ----------- |
+| O ( nk ) | O ( nk ) | O ( nk ) | O( n + k ) |
+
+</br>
+
+`n` = length of array
+`k` = amount of digits
+
+**NOTE:** if you're dealing with unique, randomly distributed data, the Big O analysis of Radix sort changes to **O( n log<sub>n</sub> )**
+
+---
+
 ## Radix Sort: Resources
 
 Brilliant: Radix Sort
