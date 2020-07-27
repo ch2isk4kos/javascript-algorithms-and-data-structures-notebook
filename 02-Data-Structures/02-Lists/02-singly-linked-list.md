@@ -8,6 +8,10 @@ Linked lists that contain nodes which have a data field as well as 'next' field,
 
 </br>
 
+### `push` method
+
+Inserting a node onto the end of list
+
 ```js
 class Node {
   constructor(value) {
@@ -83,6 +87,85 @@ SinglyLinkedList {
   head: Node { value: 'Allow', next: Node { value: 'Me', next: [Node] } },
   tail: Node { value: 'Myself', next: null },
   length: 5 }
+*/
+list.push("!");
+/*
+SinglyLinkedList {
+  head: Node { value: 'Allow', next: Node { value: 'Me', next: [Node] } },
+  tail: Node { value: '!', next: null },
+  length: 6 }
+*/
+```
+
+</br>
+
+### `pop` method
+
+removing a node from the end of the list
+
+```js
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+class SinglyLinkedList {
+  constructor() {
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
+  }
+
+  push(value) {
+    let node = new Node(value);
+    if (!this.head) {
+      this.head = node;
+      this.tail = this.head;
+    } else {
+      this.tail.next = node;
+      this.tail = node;
+    }
+    this.length++;
+    return this;
+  }
+
+  pop() {
+    if (!this.head) return undefined;
+    let current = this.head;
+    let newTail = current;
+
+    // traversing through the list
+    while (current.next) {
+      newTail = current;
+      current = current.next;
+    }
+
+    console.log("current: ", current.value);
+    console.log("new tail: ", newTail.value);
+    console.log("previous length: ", this.length);
+
+    this.tail = newTail;
+    this.tail.next = null;
+    this.length--;
+
+    console.log("new length: ", this.length);
+
+    return current
+  }
+}
+```
+
+```js
+list.pop();
+
+/*
+current:  !
+new tail:  york
+previous length: 6
+new length: 5
+Node { value: '!', next: null }
 */
 ```
 
