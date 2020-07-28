@@ -268,6 +268,13 @@ Node {
 
 ```
 
+### `unshift` method
+
+Remove the last element from the array.
+
+```js
+```
+
 ---
 
 ## Singly Linked Lists: Resources
