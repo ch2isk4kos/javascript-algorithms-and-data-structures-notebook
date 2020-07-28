@@ -1175,7 +1175,20 @@ class SinglyLinkedList {
   }
 
   reverse() {
+    let node = this.head;
+    this.head = this.tail;
+    this.tail = node;
 
+    let prev = null;
+    let next;
+
+    for (let i = 0; i < this.length; i++) {
+      next = node.next;
+      node.next = prev;
+      prev = node;
+      node = next;
+    }
+    return this;
   }
 
   print() {
@@ -1192,7 +1205,7 @@ class SinglyLinkedList {
 ```
 
 ```js
-let list = new SinglyLinkedList()
+let list = new SinglyLinkedList();
 
 list.push(1);
 /*
@@ -1221,24 +1234,36 @@ SinglyLinkedList {
 }
 */
 
-list.remove(2)   // Node { value: 3, next: null }
-
-list.remove(2)
-/*
-TypeError: Cannot read property 'next' of null
-    at SinglyLinkedList.remove (repl:122:33)
-*/
-
-list.remove(1)   // Node { value: 2, next: null }
-
-list
+list.push(4)
 /*
 SinglyLinkedList {
-  head: Node { value: 1, next: null },
-  tail: Node { value: 1, next: null },
-  length: 1
+  head: Node { value: 1, next: Node { value: 2, next: [Node] } },
+  tail: Node { value: 4, next: null },
+  length: 4
 }
 */
+
+list.push(5)
+/*
+SinglyLinkedList {
+  head: Node { value: 1, next: Node { value: 2, next: [Node] } },
+  tail: Node { value: 5, next: null },
+  length: 5
+}
+*/
+
+list.print();     // [ 1, 2, 3, 4, 5 ]
+
+list.reverse();
+/*
+SinglyLinkedList {
+  head: Node { value: 5, next: Node { value: 4, next: [Node] } },
+  tail: Node { value: 1, next: null },
+  length: 5
+}
+*/
+
+list.print()      // [ 5, 4, 3, 2, 1 ]
 ```
 
 ---
