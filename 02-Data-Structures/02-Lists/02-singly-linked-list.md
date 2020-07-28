@@ -370,6 +370,145 @@ SinglyLinkedList {
 */
 ```
 
+</br>
+
+### `get` method
+
+Retrieving a node by its position in the list.
+
+```js
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+class SinglyLinkedList {
+  constructor() {
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
+  }
+
+  push(value) {
+    let node = new Node(value);
+
+    if (!this.head) {
+      this.head = node;
+      this.tail = this.head;
+    } else {
+      this.tail.next = node;
+      this.tail = node;
+    }
+
+    this.length++;
+    return this;
+  }
+
+  pop() {
+    if (!this.head) return undefined;
+    let current = this.head;
+    let newTail = current;
+
+    while (current.next) {
+      newTail = current;
+      current = current.next;
+    }
+
+    this.tail = newTail;
+    this.tail.next = null;
+    this.length--;
+
+    if (this.length === 0) {
+      this.head = null;
+      this.tail = null;
+    }
+    return current
+  }
+
+  shift() {
+    if (!this.head) return undefined;
+
+    let nodeToRemove = this.head;
+
+    this.head = nodeToRemove.next;
+    this.length--;
+
+    if (this.length === 0) {
+      this.tail = null;
+    }
+
+    return nodeToRemove;
+  }
+
+  unshift(value) {
+    let node = new Node(value);
+
+    if (!this.head) {
+      this.head = node;
+      this.tail = this.head;
+    } else {
+      node.next = this.head;
+      this.head = node;
+    }
+
+    this.length++;
+
+    return this;
+  }
+
+  get(index) {
+    if (index < 0 || index >= this.length) return null;
+
+    let count = 0;
+    let current = this.head;
+
+    while (count != index) {
+      current = current.next;
+      count++;
+    }
+    return current;
+  }
+}
+```
+
+```js
+let list = new SinglyLinkedList();
+
+list.push("Eat");
+/*
+SinglyLinkedList {
+  head: Node { value: 'Eat', next: null },
+  tail: Node { value: 'Eat', next: null },
+  length: 1
+}
+*/
+
+list.push("Sleep");
+/*
+SinglyLinkedList {
+  head: Node { value: 'Eat', next: Node { value: 'Sleep', next: null } },
+  tail: Node { value: 'Sleep', next: null },
+  length: 2
+}
+*/
+
+list.push("Code");
+/*
+SinglyLinkedList {
+  head: Node { value: 'Eat', next: Node { value: 'Sleep', next: [Node] } },
+  tail: Node { value: 'Code', next: null },
+  length: 3
+}
+*/
+
+list.get(0);  // Node { value: 'Eat', next: Node { value: 'Sleep', next: Node { value: 'Code', next: null } } }
+list.get(2);  // Node { value: 'Code', next: null }
+list.get(3);  // null
+
+```
+
 ---
 
 ## Singly Linked Lists: Resources
