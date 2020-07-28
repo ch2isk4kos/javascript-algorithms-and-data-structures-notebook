@@ -1268,6 +1268,20 @@ list.print()      // [ 5, 4, 3, 2, 1 ]
 
 ---
 
+## Singly Linked Lists: Big O
+
+</br>
+
+| insertion | removal | searching | accessing |
+| ----------- | --------- | ----------- | ----------- | ----------- |
+| O( 1 ) | Best: O( 1 ) or Worst: O( n ) | O( n ) | O( n ) |
+
+</br>
+
+Singly Linked Lists are more beneficial over arrays when it comes to insertion and removal at the beginning are frequently required but are not recommended for accessing data.
+
+---
+
 ## Singly Linked Lists: Resources
 
 **GeeksforGeeks**
