@@ -273,6 +273,7 @@ Node {
 Remove the last element from the array.
 
 ```js
+//
 ```
 
 ---
