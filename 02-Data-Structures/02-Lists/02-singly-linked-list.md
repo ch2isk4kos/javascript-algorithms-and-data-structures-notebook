@@ -248,6 +248,26 @@ class SinglyLinkedList {
 }
 ```
 
+```js
+list
+
+/*
+SinglyLinkedList {
+  head: Node { value: 10, next: Node { value: 15, next: [Node] } },
+  tail: Node { value: 34, next: null },
+  length: 5 }
+*/
+
+list.shift();
+
+/*
+Node {
+  value: 10,
+  next: Node { value: 15, next: Node { value: 22, next: [Node] } } }
+*/
+
+```
+
 ---
 
 ## Singly Linked Lists: Resources
