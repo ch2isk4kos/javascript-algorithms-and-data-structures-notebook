@@ -850,6 +850,7 @@ class SinglyLinkedList {
     this.length = 0;
   }
 
+  // add a node to end of list
   push(value) {
     let node = new Node(value);
 
@@ -865,6 +866,7 @@ class SinglyLinkedList {
     return this;
   }
 
+  // remove node from end of list
   pop() {
     if (!this.head) return undefined;
     let current = this.head;
@@ -886,6 +888,7 @@ class SinglyLinkedList {
     return current
   }
 
+  // remove node from beginning of list
   shift() {
     if (!this.head) return undefined;
 
@@ -901,6 +904,7 @@ class SinglyLinkedList {
     return nodeToRemove;
   }
 
+  // add node to beginning of list
   unshift(value) {
     let node = new Node(value);
 
@@ -917,6 +921,7 @@ class SinglyLinkedList {
     return this;
   }
 
+  // access a specific node
   get(index) {
     if (index < 0 || index >= this.length) return null;
 
@@ -930,6 +935,7 @@ class SinglyLinkedList {
     return current;
   }
 
+  // modify value of a specific node
   set(index, value) {
     let node = this.get(index);
 
@@ -940,6 +946,7 @@ class SinglyLinkedList {
     return false;
   }
 
+  // add a node to specific index
   insert(index, value) {
     if (index < 0 || index > this.length) return false;
     if (index === this.length) return !!this.push(value);
@@ -956,6 +963,7 @@ class SinglyLinkedList {
     return true;
   }
 
+  // remove a node from a specific index
   remove(index) {
     if (index < 0 || index > this.length) return undefined;
     if (index === 0) return this.shift();
@@ -970,6 +978,7 @@ class SinglyLinkedList {
     return removedNode;
   }
 
+  // reverse the list order
   reverse() {
     let node = this.head;
     this.head = this.tail;
@@ -987,6 +996,7 @@ class SinglyLinkedList {
     return this;
   }
 
+  // console.log the singly linked list
   print() {
     let array = [];
     let current = this.head;
