@@ -1,14 +1,16 @@
 # Data Structures: Doubly Linked Lists
 
+---
+
 ## Doubly Linked List
 
 <https://en.wikipedia.org/wiki/Doubly_linked_list>
 
-A similar data structure to a singly linked list but you can traverse the collection in both directions.
+Same functionality of a singly linked list with an additional pointer on each node which directs to it's previous node making it possible to traverse the list in the opposite direction as well.
 
 ```js
 /*
-                    Doubly Linked List
+                         Doubly Linked List
 
 
               HEAD            LENGTH = 4           TAIL
