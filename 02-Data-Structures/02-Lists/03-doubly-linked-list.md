@@ -122,8 +122,30 @@ class DoublyLinkedList {
     this.length--;
     return node;
   }
+
+  // add to beginning of list
+  unshift(value) {
+    let node = new Node(value);
+
+    if (this.length === 0) {
+      this.head = node;
+      this.tail = node;
+    } else {
+      this.head.prev = node;
+      node.next = this.head;
+      this.head = node;
+    }
+    this.length++;
+    return this;
+  }
 }
 
 let list = new DoublyLinkedList();
+list.push('hello');
+list.push('world');
+list.push('!');
+list.unshift('oh');
+list.pop();
+list.shift();
 
 ```
