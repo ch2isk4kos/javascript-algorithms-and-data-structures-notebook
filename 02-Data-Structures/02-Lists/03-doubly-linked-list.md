@@ -177,7 +177,33 @@ class DoublyLinkedList {
   // replace the value of a node
 
   set(index, value) {
-    
+    let node = this.get(index);
+
+    if (node !== null) {
+      node.value = value;
+      return true;
+    }
+
+    return false;
+  }
+
+  // add node to position
+
+  insert(index, value) {
+    if (index < 0 || index > this.length) return false;
+    if (index === 0) return !!this.unshift(value);
+    if (index === this.length) return !!this.push(value);
+
+    let node = new Node(value);
+    let getNode = this.get(index - 1);
+    let insertNode = getNode.next;
+
+    getNode.next = node, node.prev = getNode;
+    node.next = insertNode, insertNode.prev = node;
+
+    this.length++
+
+    return true;
   }
 }
 
