@@ -13,6 +13,8 @@ An abstract data type that serves as a collection of elements with two main prin
 
 A Stack is considered as a Linear data structure or more abstractly, a **sequential collection**.
 
+</br>
+
 ### LIFO Principle: Last In First Out
 
 The last element that enters the stack will be the first one removed.
@@ -55,3 +57,15 @@ The last element that enters the stack will be the first one removed.
                   node        node        node        node
 */
 ```
+
+</br>
+
+### Where Are Stacks Used
+
+* Managing function invocations
+* Routing (history object)
+* Undo/Redo
+
+---
+
+## Creating a Stack with an Array
