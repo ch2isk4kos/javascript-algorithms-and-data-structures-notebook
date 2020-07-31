@@ -70,6 +70,7 @@ class DoublyLinkedList {
   }
 
   // add to beginning of list
+  
   push(value) {
     let node = new Node(value);
 
@@ -86,6 +87,7 @@ class DoublyLinkedList {
   }
 
   // remove from end of list
+  
   pop() {
     if (!this.head) return undefined;
 
@@ -105,6 +107,7 @@ class DoublyLinkedList {
   }
 
   // remove from beginning of list
+  
   shift() {
     if (!this.head) return undefined;
 
@@ -124,6 +127,7 @@ class DoublyLinkedList {
   }
 
   // add to beginning of list
+  
   unshift(value) {
     let node = new Node(value);
 
@@ -140,7 +144,8 @@ class DoublyLinkedList {
   }
 
   // access node by position
-  get(index) {
+
+ get(index) {
     let count, current;
 
     if (index < 0 || index >= this.length) return undefined;
