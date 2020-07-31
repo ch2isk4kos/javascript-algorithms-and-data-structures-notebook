@@ -112,3 +112,11 @@ Queue {
 </br>
 
 ---
+
+## Queues: Resources
+
+**GeeksforGeeks**:
+<https://www.geeksforgeeks.org/queue-data-structure/>
+
+**Tutorials Point**:
+<https://www.tutorialspoint.com/data_structures_algorithms/dsa_queue.htm>
