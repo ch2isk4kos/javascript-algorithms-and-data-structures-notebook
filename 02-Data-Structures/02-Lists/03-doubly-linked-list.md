@@ -251,3 +251,21 @@ list.insert(2, '!');
 list.remove(2);
 
 ```
+
+---
+
+## Doubly Linked List: Big O
+
+</br>
+
+| insertion | removal | searching | accessing |
+| ----------- | --------- | ----------- | ----------- | ----------- |
+| Constant: O( 1 ) | Best: O( 1 ) or Worst: O( n ) | Constant: O( n ) | Constant: O( n ) |
+
+</br>
+
+Doubly linked lists are beneficial when you need to access and insert nodes in a reverse manner.
+
+Browser history functionality could be created with Doubly Linked Lists.
+
+More efficient than Singly Linked Lists for finding nodes but takes up more memory.
