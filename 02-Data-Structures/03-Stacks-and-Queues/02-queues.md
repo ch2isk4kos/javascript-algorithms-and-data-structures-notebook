@@ -1,4 +1,4 @@
-# Data Strucures: Queues
+# Data Structures: Queues
 
 ---
 

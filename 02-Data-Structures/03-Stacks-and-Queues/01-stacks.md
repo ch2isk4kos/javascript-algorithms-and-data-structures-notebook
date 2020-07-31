@@ -1,4 +1,4 @@
-# Stacks and Queues: Intro to Stacks
+# Data Structures: Intro to Stacks
 
 ---
 
