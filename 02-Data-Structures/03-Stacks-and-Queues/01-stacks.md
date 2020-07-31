@@ -64,7 +64,7 @@ The last element that enters the stack will be the first one removed.
 
 There are multiple ways of implementing a stack:
 
-* Managing function invocations
+* Managing function invocations ( Call Stack )
 * Routing (history object)
 * Undo/Redo
 * etc...
@@ -175,3 +175,17 @@ stack.pop();                   // 'amazon'
 ```
 
 **NOTICE** that **`push`** and **`pop`** have a different functionality this time around.
+
+---
+
+## Stack: Big O
+
+</br>
+
+| insertion | removal | searching | accessing |
+| ----------- | --------- | ----------- | ----------- | ----------- |
+| Constant: O( 1 ) | Best: O( 1 ) or Worst: O( n ) | Constant: O( n ) | Constant: O( n ) |
+
+</br>
+
+The most important part of a stack prioritizes insertion and removal.
