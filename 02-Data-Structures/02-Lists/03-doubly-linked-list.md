@@ -141,26 +141,32 @@ class DoublyLinkedList {
 
   // access node by position
   get(index) {
+    let count, current;
+
     if (index < 0 || index >= this.length) return undefined;
+
     if (index <= this.length / 2) {
-      let count = 0;
-      let current = this.head;
-      console.log('started from beginning');
+      count = 0;
+      current = this.head;
+
+      console.log('STARTED FROM BEGINNING');
+
       while (count !== index) {
         current = current.next;
         count++;
       }
-      return current;
     } else {
-      let count = this.length - 1;
-      let current = this.tail;
-      console.log('started from end');
+      count = this.length - 1;
+      current = this.tail;
+
+      console.log('STARTED FROM END');
+
       while (count !== index) {
         current = current.prev;
         count--;
       }
-      return current;
     }
+    return current;
   }
 }
 
