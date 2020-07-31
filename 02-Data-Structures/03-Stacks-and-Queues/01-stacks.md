@@ -150,9 +150,28 @@ class Stack {
     this.size++;
     return this.size;
   }
+
+  pop() {
+    let current = this.first;
+    if (this.size === 0) return null;
+    if (this.first === this.last) {
+      this.last = null;
+    }
+    this.first = this.first.next;
+    this.size--;
+    return current.value;
+  }
 }
 ```
 
 ```js
 const stack = new Stack();
+
+stack.push('google');          // 1
+stack.push('linkedin');        // 2
+stack.push('amazon');          // 3
+
+stack.pop();                   // 'amazon'
 ```
+
+**NOTICE** that **`push`** and **`pop`** have a different functionality this time around.
