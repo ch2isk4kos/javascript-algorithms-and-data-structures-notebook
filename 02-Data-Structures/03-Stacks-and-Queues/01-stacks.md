@@ -109,3 +109,50 @@ stack.shift();              // 'eat snacks'
 
 // NOTE: unshift() and shift() is not recommended by analysis of Big O
 ```
+
+---
+
+## Writing a Stack from Scratch
+
+This implentation of a stack will be built using a **Singly Linked List**. You could also use a Doubly Linked List as well.
+
+**NOTE**: be aware that the instance method names look familiar but their functionality is differnt from Singly Linked List section.
+
+</br>
+
+```js
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+class Stack {
+  constructor() {
+    this.first = null;
+    this.last = null;
+    this.size = 0;
+  }
+
+  push(value) {
+    let node = new Node(value);
+    let current;
+
+    if (!this.first) {
+      this.first = node;
+      this.last = node;
+    } else {
+      current = this.first;
+      this.first = node;
+      this.first.next = current;
+    }
+    this.size++;
+    return this.size;
+  }
+}
+```
+
+```js
+const stack = new Stack();
+```
