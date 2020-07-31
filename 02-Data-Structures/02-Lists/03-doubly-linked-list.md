@@ -69,6 +69,7 @@ class DoublyLinkedList {
     this.length = 0;
   }
 
+  // add to the beginning of list
   push(value) {
     let node = new Node(value);
 
@@ -82,6 +83,24 @@ class DoublyLinkedList {
     }
     this.length++;
     return this;
+  }
+
+  // remove from the end of list
+  pop() {
+    if (!this.head) return undefined;
+
+    let node = this.tail;
+
+    if (this.length === 1) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      this.tail = node.prev;
+      this.tail.next = null;
+      node.prev = null;
+    }
+    this.length--;
+    return node;
   }
 }
 
