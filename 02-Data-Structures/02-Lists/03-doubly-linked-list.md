@@ -85,4 +85,6 @@ class DoublyLinkedList {
   }
 }
 
+let list = new DoublyLinkedList();
+
 ```
