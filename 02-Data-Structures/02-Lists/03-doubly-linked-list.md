@@ -269,3 +269,13 @@ Doubly linked lists are beneficial when you need to access and insert nodes in a
 Browser history functionality could be created with Doubly Linked Lists.
 
 More efficient than Singly Linked Lists for finding nodes but takes up more memory.
+
+---
+
+## Doubly Linked Lists: Resources
+
+**GeeksforGreeks: Doubly Linked Lists**
+<https://www.geeksforgeeks.org/doubly-linked-list/>
+
+**Tutorials Point: Doubly Linked Lists**
+<https://www.tutorialspoint.com/data_structures_algorithms/doubly_linked_list_algorithm.htm>
