@@ -24,3 +24,79 @@ Queues exists everywhere:
 The first piece of data inside of a queue is always the first element removed.
 
 ---
+
+## Writing a Queue from Scratch
+
+A Linked List-based Queue
+
+</br>
+
+```js
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+class Queue {
+  constructor() {
+    this.first = null;
+    this.last = null;
+    this.size = 0;
+  }
+
+  // add node to end of queue
+
+  enqueue(value) {
+    let node = new Node(value);
+
+    if (!this.first) {
+      this.first = node;
+      this.last = node;
+    } else {
+      this.last.next = node;
+      this.last = node;
+    }
+    this.size++;
+    return this.size;
+  }
+
+  // remove first node added to the queue
+  
+  dequeue() {
+    if (!this.first) return null;
+
+    let current = this.first;
+
+    if (this.first === this.last) {
+      this.last = null;
+    }
+    this.first = this.first.next;
+    this.size--;
+
+    return current.value;
+  }
+}
+```
+
+```js
+let queue = new Queue();
+
+queue.enqueue(100)      // 1
+queue.enqueue(101)      // 2
+queue.enqueue(102)      // 3
+
+queue.dequeue()         // 100
+queue.dequeue()         // 101
+
+queue
+/*
+Queue {
+  first: Node { value: 102, next: null },
+  last: Node { value: 102, next: null },
+  size: 1 }
+*/
+```
+
+---
