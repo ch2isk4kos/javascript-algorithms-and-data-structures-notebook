@@ -44,7 +44,7 @@ class DoublyLinkedList {
   constructor() {
     this.head = null;
     this.tail = null;
-    this.lenght = 0;
+    this.length = 0;
   }
 }
 ```
@@ -205,14 +205,49 @@ class DoublyLinkedList {
 
     return true;
   }
+
+  // remove node by position
+
+  remove(index) {
+    if (index < 0 || index >= this.length) return undefined;
+    if (index === 0) return this.shift();
+    if (index === this.length - 1) return this.pop();
+
+    let nodeToRemove = this.get(index);
+//  ********************************
+    let prevNode = nodeToRemove.prev;
+    let postNode = prevNode;
+//  ********************************
+
+    // or
+
+    // ******************************************
+    // nodeToRemove.prev.next = nodeToRemove.next;
+    // nodeToRemove.next.prev = nodeToRemove.prev;
+    // ******************************************
+
+    nodeToRemove.next = null;
+    nodeToRemove.prev = null;
+
+    this.length--;
+    return node;
+  }
 }
+```
+
+```js
 
 let list = new DoublyLinkedList();
+
 list.push('hello');
-list.push('world');
+list.push('wrld');
 list.push('!');
 list.unshift('oh');
 list.pop();
 list.shift();
+list.get(0);
+list.set(1, 'world');
+list.insert(2, '!');
+list.remove(2);
 
 ```
