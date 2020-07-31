@@ -100,3 +100,15 @@ Queue {
 ```
 
 ---
+
+## Queues: Big O
+
+</br>
+
+| insertion | removal | searching | accessing |
+| ----------- | --------- | ----------- | ----------- | ----------- |
+| Constant: O( 1 ) | Constant: O( 1 ) | Constant: O( n ) | Constant: O( n ) |
+
+</br>
+
+---
