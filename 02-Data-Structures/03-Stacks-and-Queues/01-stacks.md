@@ -189,3 +189,16 @@ stack.pop();                   // 'amazon'
 </br>
 
 The most important part of a stack prioritizes insertion and removal.
+
+---
+
+## Stack: Resources
+
+**GeeksforGeeks**:
+<https://www.geeksforgeeks.org/stack-data-structure/>
+
+**Tutorials Point**
+<https://www.tutorialspoint.com/data_structures_algorithms/stack_algorithm.htm>
+
+**Traversy Media**
+<https://www.youtube.com/watch?v=wtynhUwS5hI>
