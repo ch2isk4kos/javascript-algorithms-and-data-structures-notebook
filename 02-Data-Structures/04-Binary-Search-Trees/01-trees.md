@@ -2,6 +2,12 @@
 
 ---
 
+## Tree
+
+A data structure that consists of nodes in a parent/child relationship.
+
+---
+
 ## Binary Tree
 
 <https://en.wikipedia.org/wiki/Binary_tree>
@@ -10,7 +16,7 @@ A tree data structure in which each node has at most two children which are refe
 
 ---
 
-## Binary Search Tree
+## Binary Search Tree ( BST )
 
 <https://en.wikipedia.org/wiki/Binary_search_tree>
 
