@@ -4,6 +4,8 @@
 
 ## Tree
 
+<https://en.wikipedia.org/wiki/Tree_%28data_structure%29>
+
 A data structure that consists of nodes in a parent/child relationship. Nodes  cannot point to siblings like a graph can.
 
 A tree must have a **root node** for it to be considered authentic.
@@ -44,7 +46,6 @@ HTML lends itself to a tree-like structure. There are elements and inside of ele
 
 ```html
 document
-
 <!-- 
 
 HTMLDocument
@@ -223,8 +224,43 @@ HTMLDocument
         vlinkColor: ""
         <get location()>: function location()
         <set location()>: function location()
-        <prototype>: HTMLDocumentPrototype { … } -->
+        <prototype>: HTMLDocumentPrototype { … } 
+-->
 
 document.body
+<!-- 
+
+<body>...</body>
+
+-->
+
+document.body.children
+<!-- 
+
+HTMLCollection
+        length: 0
+        <prototype>: HTMLCollectionPrototype
+        constructor: function ()
+        item: function item()
+        length: 
+        namedItem: function namedItem()
+        Symbol(Symbol.iterator): function values()
+        Symbol(Symbol.toStringTag): "HTMLCollection"
+        <get length()>: function length()
+        <prototype>: Object { … }
+-->
 
 ```
+
+---
+
+## Tree: Resources
+
+**Wikipedia**: Routing
+<https://en.wikipedia.org/wiki/Routing>
+
+**Tutorials Point**: Trees
+<https://www.tutorialspoint.com/data_structures_algorithms/tree_data_structure.htm>
+
+**EDUCBA**: Trees
+<https://www.educba.com/types-of-trees-in-data-structure/>
