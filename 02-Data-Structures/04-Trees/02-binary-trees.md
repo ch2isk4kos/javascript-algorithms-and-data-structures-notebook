@@ -132,6 +132,8 @@ class BST {
 
 ```
 
+### BST breakdown
+
 ```js
 let tree = new BST();
 
