@@ -100,8 +100,6 @@ class BST {
     let node = new Node(value);
     let current;
 
-    console.log("node: ", node);
-
     if (this.root === null) {
       this.root = node;
       return this;
@@ -208,11 +206,12 @@ tree.insert(24);
           }
         } else if (24 > 10) {              // TRUE
           if (current.right === null) {    // TRUE
-            current.right = node;
-            return this;
-          } else {
-            current = current.right;
+
+            current.right = { value: 24, left: null, right: null };
+            return { root: Node { value: 10, left: Node { value: 7, left: null, right: null }, right: Node { value: 24, left: null, right: null } } };
+
           }
+          ...
         }
       }
     }
