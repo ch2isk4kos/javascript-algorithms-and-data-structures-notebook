@@ -38,11 +38,17 @@ key:
 
 ---
 
-## Tree: HTML DOM
+## Tree: Use Cases
 
 Most common example of a tree is **HTML DOM**.
 
 HTML lends itself to a tree-like structure. There are elements and inside of elements you have nested elements that are referred to as children ( parent/child relationship among elements ).
+
+Network Routing is another example of using a tree-like data structure.
+
+Trees are used in Artificial Intelligence and Machine Learning often such as a **Minimax Tree** that would be used in creating something like a Tic-Tac-Toe game.
+
+### HTML DOM
 
 ```html
 document
@@ -274,3 +280,6 @@ Think of a diagram that illustrates the process of a while loop.
 
 **Wikipedia**: Routing
 <https://en.wikipedia.org/wiki/Routing>
+
+**Wikipedia**: Minimax
+<https://en.wikipedia.org/wiki/Minimax>
