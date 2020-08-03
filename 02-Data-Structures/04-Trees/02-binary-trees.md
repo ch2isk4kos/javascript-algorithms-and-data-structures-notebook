@@ -51,3 +51,47 @@ key:
                                      4  12
 */
 ```
+
+---
+
+## Binary Search Tree: Skeleton
+
+</br>
+
+```js
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+class BST {
+  constructor() {
+    this.root = null;
+  }
+}
+```
+
+---
+
+## Binary Search Tree: Solution
+
+</br>
+
+```js
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+class BST {
+  constructor() {
+    this.root = null;
+  }
+}
+```
