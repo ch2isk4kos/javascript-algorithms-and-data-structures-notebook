@@ -46,7 +46,13 @@ HTML lends itself to a tree-like structure. There are elements and inside of ele
 
 Network Routing is another example of using a tree-like data structure.
 
-Trees are used in Artificial Intelligence and Machine Learning often such as a **Minimax Tree** that would be used in creating something like a Tic-Tac-Toe game.
+Trees are used in Artificial Intelligence and Machine Learning often such as a **Minimax Tree** or a **Decision Tree** that would be used in - but not specific to - creating something like a Tic-Tac-Toe game.
+
+**Computer File Systems** are also a great example of a tree-like structure.
+
+JSON is another example of a tree. When you parse the response from a string into whatever language used, there is code that traverses a tree-like structure.
+
+</br>
 
 ### HTML DOM
 
