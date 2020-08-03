@@ -100,6 +100,8 @@ class BST {
     let node = new Node(value);
     let current;
 
+    console.log("node: ", node);
+
     if (this.root === null) {
       this.root = node;
       return this;
@@ -130,5 +132,90 @@ class BST {
 
 }
 
+```
+
+```js
 let tree = new BST();
+
+tree.insert(10);
+
+/*
+  insert(10) {
+    let node = new Node(10);
+    let current;
+
+    if (this.root === null) {   // TRUE
+
+      this.root = { value: 10, left: null, right: null };
+      return { root: Node { value: 10, left: null, right: null } };
+
+    }
+    ...
+  }
+*/
+
+tree.insert(7);
+
+/*
+  insert(7) {
+    let node = new Node(7);
+    let current;
+
+    if (this.root === null) {   // FALSE
+      this.root = node;
+      return this;
+    } else {
+      current = { value: 10, left: null, right: null };
+
+      while(true) {
+        if (7 === 10) return undefined;   // FALSE
+
+        if (7 < 10) {                     // TRUE
+          if (current.left === null) {    // TRUE
+
+            current.left = { value: 7, left: null, right: null };
+            return { root: Node { value: 10, left: Node { value: 7, left: null, right: null }, right: null } };
+
+          }
+          ...
+        }
+      }
+    }
+  }
+*/
+
+tree.insert(24);
+
+/*
+  insert(7) {
+    let node = new Node(24);
+    let current;
+
+    if (this.root === null) {   // FALSE
+      this.root = node;
+      return this;
+    } else {
+      current = { value: 10, left: null, right: null };
+
+      while(true) {
+        if (24 === 10) return undefined;   // FALSE
+
+        if (24 < 10) {                     // FALSE
+          current.left = node;
+            return this;
+          } else {
+            current = current.left;
+          }
+        } else if (24 > 10) {              // TRUE
+          if (current.right === null) {    // TRUE
+            current.right = node;
+            return this;
+          } else {
+            current = current.right;
+          }
+        }
+      }
+    }
+  }
+*/
 ```
