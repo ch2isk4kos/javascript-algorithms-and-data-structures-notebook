@@ -22,17 +22,135 @@ With a standard Tree, there are many different was of traversal. Two common appr
 
 These refer to the general directions.
 
-### Breadth-first
-
-<https://en.wikipedia.org/wiki/Breadth-first_search>
-
-Checks across each layer of the tree from the parent down to the children.
-
-### Depth-first
-
 <https://en.wikipedia.org/wiki/Depth-first_search>
 
 Checks down the tree starting with the bottom-most child and moves vertically.
+
+---
+
+## Breadth-first Search ( BFS )
+
+<https://en.wikipedia.org/wiki/Breadth-first_search>
+
+Iteratively checks across each layer of the tree from the parent down to its children.
+
+It uses a **queue** - FIFO structure - and a **variable** to store the value of the node searched.
+
+</br>
+
+```js
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+class BST {
+  constructor() {
+    this.root = null;
+  }
+
+  // add node to tree
+
+  insert(value) {
+    let node = new Node(value);
+    let current;
+
+    if (this.root === null) {
+      this.root = node;
+      return this;
+    } else {
+      current = this.root;
+
+      while(true) {
+        if (value === current.value) return undefined;
+
+        if (value < current.value) {
+          if (current.left === null) {
+            current.left = node;
+            return this;
+          } else {
+            current = current.left;
+          }
+        } else if (value > current.value) {
+          if (current.right === null) {
+            current.right = node;
+            return this;
+          } else {
+            current = current.right;
+          }
+        }
+      }
+    }
+  }
+
+  // find node in tree
+
+  find(value) {
+    if (this.root === null) return false;
+
+    let current = this.root;
+    let found = false;
+
+    while(current && !found) {
+      if (value < current.value) {
+        current = current.left;
+      } else if (value > current.value) {
+        current = current.right
+      } else {
+        found = true;
+      }
+    }
+    if (!found) return undefined;
+    return current;
+  }
+
+  breadthFirst() {
+    let node = this.root;
+    let data = [];
+    let queue = [];
+
+    queue.push(this.root);
+
+    // while something is in the queue
+    while(queue.length) {
+      node = queue.shift();
+      data.push(node.value);
+
+      if (node.left) queue.push(node.left);
+      if (node.right) queue.push(node.right);
+    }
+    return data;
+  }
+
+}
+```
+
+### breadth-first breakdown
+
+```js
+let tree = new BST();
+
+tree.insert(10);
+tree.insert(6);
+tree.insert(15);
+tree.insert(2);
+tree.insert(7);
+tree.insert(24);
+
+/*
+BST {
+  root:
+    Node { value: 10,
+      left: Node { value: 6, left: [Node], right: [Node] },
+      right: Node { value: 15, left: null, right: [Node] } } 
+    }
+*/
+
+tree.breadthFirst();    //  [ 10, 6, 15, 2, 7, 24 ]
+```
 
 ---
 
@@ -52,7 +170,7 @@ Checks down the tree starting with the bottom-most child and moves vertically.
 
 **GeeksforGeeks**: Depth-first Search or DFS for a Graph
 <https://www.geeksforgeeks.org/depth-first-search-or-dfs-for-a-graph/>
-\
+
 **Brilliant**: Depth-first Search (DFS)
 <https://brilliant.org/wiki/depth-first-search-dfs/>
 
