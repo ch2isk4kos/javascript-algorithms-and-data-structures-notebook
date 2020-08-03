@@ -38,7 +38,7 @@ key:
 
 ---
 
-## Tree Use Case
+## Tree: HTML DOM
 
 Most common example of a tree is **HTML DOM**.
 
@@ -254,13 +254,23 @@ HTMLCollection
 
 ---
 
-## Tree: Resources
+## Abstract Syntax Trees ( AST )
 
-**Wikipedia**: Routing
-<https://en.wikipedia.org/wiki/Routing>
+<https://en.wikipedia.org/wiki/Abstract_syntax_tree>
+
+A tree representation of the abstract syntactic structure of source code written in a programming language. Each node of the tree denotes a construct occurring in the source code.
+
+Think of a diagram that illustrates the process of a while loop.
+
+---
+
+## Tree: Resources
 
 **Tutorials Point**: Trees
 <https://www.tutorialspoint.com/data_structures_algorithms/tree_data_structure.htm>
 
 **EDUCBA**: Trees
 <https://www.educba.com/types-of-trees-in-data-structure/>
+
+**Wikipedia**: Routing
+<https://en.wikipedia.org/wiki/Routing>
