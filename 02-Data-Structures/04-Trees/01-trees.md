@@ -40,6 +40,8 @@ key:
 
 ## Tree: Use Cases
 
+There are many types of Trees. They all follow the same rules of a tree but are nuanced.
+
 Most common example of a tree is **HTML DOM**.
 
 HTML lends itself to a tree-like structure. There are elements and inside of elements you have nested elements that are referred to as children ( parent/child relationship among elements ).
