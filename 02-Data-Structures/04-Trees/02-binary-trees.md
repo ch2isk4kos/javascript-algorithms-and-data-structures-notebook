@@ -93,5 +93,40 @@ class BST {
   constructor() {
     this.root = null;
   }
+
+  // add node to tree
+
+  insert(value) {
+    let node = new Node(value);
+    let current;
+
+    if (this.root === null) {
+      this.root = node;
+      return this;
+    } else {
+      current = this.root;
+
+      while(true) {
+        if (value < current.value) {
+          if (current.left === null) {
+            current.left = node;
+            return this;
+          } else {
+            current = current.left;
+          }
+        } else if (value > current.value) {
+          if (current.right === null) {
+            current.right = node;
+            return this;
+          } else {
+            current = current.right;
+          }
+        }
+      }
+    }
+  }
+
 }
+
+let tree = new BST();
 ```
