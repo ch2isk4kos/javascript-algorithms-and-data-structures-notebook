@@ -297,3 +297,14 @@ As the number of nodes doubles, the number of steps increases by 1.
 2x number of nodes: 1 extra step
 4x number of nodes: 2 extra step
 8x number of nodes: 3 extra step
+
+---
+
+## Binary Search Tree: Resources
+
+**GeeksforGeeks**: Binary Search Trees
+<https://www.geeksforgeeks.org/binary-search-tree-data-structure/>
+
+**Tutorials Point**: Binary Search Trees
+<https://www.tutorialspoint.com/data_structures_algorithms/binary_search_tree.htm>
+
