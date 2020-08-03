@@ -141,7 +141,7 @@ BST {
   root:
     Node { value: 10,
       left: Node { value: 6, left: [Node], right: [Node] },
-      right: Node { value: 15, left: null, right: [Node] } } 
+      right: Node { value: 15, left: null, right: [Node] } }
     }
 */
 
@@ -159,6 +159,8 @@ Traverses nodes vertically down to the end of the tree before visiting child nod
 </br>
 
 ### DFS: Pre Order
+
+Visits the node first. Then explores the entire left side before traversing the right side of the tree.
 
 ```js
 class Node {
@@ -249,7 +251,6 @@ class BST {
 
 }
 ```
-
 
 ---
 
