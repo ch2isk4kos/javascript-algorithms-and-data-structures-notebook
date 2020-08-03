@@ -22,10 +22,6 @@ With a standard Tree, there are many different was of traversal. Two common appr
 
 These refer to the general directions.
 
-<https://en.wikipedia.org/wiki/Depth-first_search>
-
-Checks down the tree starting with the bottom-most child and moves vertically.
-
 ---
 
 ## Breadth-first Search ( BFS )
@@ -151,6 +147,109 @@ BST {
 
 tree.breadthFirst();    //  [ 10, 6, 15, 2, 7, 24 ]
 ```
+
+---
+
+## Depth-first Search ( DFS )
+
+<https://en.wikipedia.org/wiki/Depth-first_search>
+
+Traverses nodes vertically down to the end of the tree before visiting child nodes.
+
+</br>
+
+### DFS: Pre Order
+
+```js
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+class BST {
+  constructor() {
+    this.root = null;
+  }
+
+  // add node to tree
+
+  insert(value) {
+    let node = new Node(value);
+    let current;
+
+    if (this.root === null) {
+      this.root = node;
+      return this;
+    } else {
+      current = this.root;
+
+      while(true) {
+        if (value === current.value) return undefined;
+
+        if (value < current.value) {
+          if (current.left === null) {
+            current.left = node;
+            return this;
+          } else {
+            current = current.left;
+          }
+        } else if (value > current.value) {
+          if (current.right === null) {
+            current.right = node;
+            return this;
+          } else {
+            current = current.right;
+          }
+        }
+      }
+    }
+  }
+
+  // find node in tree
+
+  find(value) {
+    if (this.root === null) return false;
+
+    let current = this.root;
+    let found = false;
+
+    while(current && !found) {
+      if (value < current.value) {
+        current = current.left;
+      } else if (value > current.value) {
+        current = current.right
+      } else {
+        found = true;
+      }
+    }
+    if (!found) return undefined;
+    return current;
+  }
+
+  breadthFirst() {
+    let node = this.root;
+    let data = [];
+    let queue = [];
+
+    queue.push(this.root);
+
+    // while something is in the queue
+    while(queue.length) {
+      node = queue.shift();
+      data.push(node.value);
+
+      if (node.left) queue.push(node.left);
+      if (node.right) queue.push(node.right);
+    }
+    return data;
+  }
+
+}
+```
+
 
 ---
 
