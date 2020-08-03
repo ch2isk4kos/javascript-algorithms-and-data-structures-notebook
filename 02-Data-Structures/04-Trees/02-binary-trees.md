@@ -279,3 +279,21 @@ tree.insert(15);
 tree.find(15);    //  Node { value: 15, left: null, right: null }
 
 ```
+
+---
+
+## Binary Search Tree: Big O
+
+</br>
+
+| insertion | searching |
+| ----------- | --------- |
+| Constant: O( log n ) | Constant: O( log n ) |
+
+</br>
+
+As the number of nodes doubles, the number of steps increases by 1.
+
+2x number of nodes: 1 extra step
+4x number of nodes: 2 extra step
+8x number of nodes: 3 extra step
