@@ -128,6 +128,28 @@ class BST {
     }
   }
 
+  // find node in tree
+
+  find(value) {
+    if (this.root === null) return false;
+
+    let current = this.root;
+    let found = false;
+
+    // while there is something to loop over AND it hasn't been found
+    while(current && !found) {
+      if (value < current.value) {
+        current = current.left;
+      } else if (value > current.value) {
+        current = current.right
+      } else {
+        found = true;
+      }
+    }
+    if (!found) return undefined;
+    return current;
+  }
+
 }
 
 ```
@@ -219,4 +241,41 @@ tree.insert(24);
     }
   }
 */
+
+tree.insert(15);
+
+/*
+  insert(15) {
+    let node = new Node(15);
+    let current;
+
+    if (this.root === null) {   // FALSE
+      this.root = node;
+      return this;
+    } else {
+      current = { value: 10, left: null, right: null };
+
+      while(true) {
+        if (15 === 10) return undefined;   // FALSE
+
+        if (15 < 10) {                     // FALSE
+          current.left = node;
+          return this;
+        } else {
+            current = current.left;
+        } else if (15 > 10) {              // TRUE
+          if (current.right === null) {    // FALSE
+            current.right = node;
+            return this;
+          } else {
+            current = { value: 24, left: { value: 15, left: null, right: null }, right: null };
+          }
+        }
+      }
+    }
+  }
+*/
+
+tree.find(15);    //  Node { value: 15, left: null, right: null }
+
 ```
