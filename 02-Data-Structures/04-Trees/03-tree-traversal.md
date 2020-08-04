@@ -389,7 +389,7 @@ NOTE: traverse(24) pops off the stack then vertically moves back up to root
 
 ### DFS: Post Order
 
-Similar to DFS: Pre Order but it recursively traverses the entire tree down to its bottom-most children before visiting the parent nodes.
+Similar to DFS: Pre Order but it recursively traverses the entire tree down to its bottom-most children before visiting the parent nodes beginning on the left side then visiting the right side with the root node being visited last.
 
 ```js
 class Node {
@@ -505,6 +505,128 @@ BST {
 */
 
 tree.depthFirstPostOrder();    //  [ 2, 7, 6, 24, 15, 10 ]
+
+```
+
+</br>
+
+### DFS: In Order
+
+Recursively traverses the entire tree down to its bottom-most children before visiting the parent nodes beginning on the left side then vertically to the parent node and again down the right branch of the tree.
+
+```js
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+class BST {
+  constructor() {
+    this.root = null;
+  }
+
+  // add node to tree
+
+  insert(value) {
+    let node = new Node(value);
+    let current;
+
+    if (this.root === null) {
+      this.root = node;
+      return this;
+    } else {
+      current = this.root;
+
+      while(true) {
+        if (value === current.value) return undefined;
+
+        if (value < current.value) {
+          if (current.left === null) {
+            current.left = node;
+            return this;
+          } else {
+            current = current.left;
+          }
+        } else if (value > current.value) {
+          if (current.right === null) {
+            current.right = node;
+            return this;
+          } else {
+            current = current.right;
+          }
+        }
+      }
+    }
+  }
+
+  // find node in tree
+
+  find(value) {
+    if (this.root === null) return false;
+
+    let current = this.root;
+    let found = false;
+
+    while(current && !found) {
+      if (value < current.value) {
+        current = current.left;
+      } else if (value > current.value) {
+        current = current.right
+      } else {
+        found = true;
+      }
+    }
+    if (!found) return undefined;
+    return current;
+  }
+
+  // depth-first seearch: post-order
+
+  depthFirstInOrder() {
+    let order = [];
+    let current = this.root;
+
+    function traverse(node) {
+      if (node.left) traverse(node.left);
+
+      order.push(node.value);
+
+      if (node.right) traverse(node.right);
+
+    }
+
+    traverse(current);
+    return order;
+  }
+
+}
+```
+
+### depth-first: in-order breakdown
+
+```js
+let tree = new BST();
+
+tree.insert(10);
+tree.insert(6);
+tree.insert(15);
+tree.insert(2);
+tree.insert(7);
+tree.insert(24);
+
+/*
+BST {
+  root:
+    Node { value: 10,
+      left: Node { value: 6, left: [Node], right: [Node] },
+      right: Node { value: 15, left: null, right: [Node] } }
+    }
+*/
+
+tree.depthFirstPostOrder();    //  [ 2, 7, 6, 10, 15, 24 ]
 
 ```
 
