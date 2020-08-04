@@ -27,3 +27,18 @@ Parent nodes are always larger than child nodes. Each parent has at most two chi
 Parent nodes are always smaller than child nodes.
 
 ---
+
+## Binary Heap: Storing
+
+The easy way of storing data in a Binary Heap is by using a **list** or an **array**.
+
+### search for the children of a parent node
+
+For any index of an array `n`:
+The left child is stored at `2n + 1`
+The right child is stored at `2n + 2`
+
+### search for the parent of a child node
+
+For any child node at index `n`:
+Its parent is at index `( n - 1 ) / 2`
