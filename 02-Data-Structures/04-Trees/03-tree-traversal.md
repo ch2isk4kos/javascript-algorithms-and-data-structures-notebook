@@ -160,7 +160,7 @@ Traverses nodes vertically down to the end of the tree before visiting child nod
 
 ### DFS: Pre Order
 
-Visits the node first. Then explores the entire left side before traversing the right side of the tree.
+Visits the root node first. Then explores the entire left side before traversing the right side of the tree.
 
 ```js
 class Node {
@@ -231,6 +231,8 @@ class BST {
     return current;
   }
 
+  // breadth-first search
+
   breadthFirst() {
     let node = this.root;
     let data = [];
@@ -249,7 +251,158 @@ class BST {
     return data;
   }
 
+  // depth-first seearch: pre-order
+
+  depthFirstPreOrder() {
+    let order = [];
+    let current = this.root;
+
+    function traverse(node) {
+      order.push(node.value);
+
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+    }
+
+    traverse(current);
+    return order;
+  }
+
 }
+```
+
+### depth-first: pre-order breakdown
+
+```js
+let tree = new BST();
+
+tree.insert(10);
+tree.insert(6);
+tree.insert(15);
+tree.insert(2);
+tree.insert(7);
+tree.insert(24);
+
+/*
+BST {
+  root:
+    Node { value: 10,
+      left: Node { value: 6, left: [Node], right: [Node] },
+      right: Node { value: 15, left: null, right: [Node] } }
+    }
+*/
+
+tree.depthFirstPreOrder();    //  [ 10, 6, 2, 7, 15, 24 ]
+
+/*
+
+========================
+    FIRST ITERATION
+========================
+
+  depthFirstPreOrder() {
+    let order = [];
+    let current = 10;
+
+    function traverse({ value: 10, left: Node { value: 6, left: [Node], right: [Node] }, right: Node { value: 15, left: null, right: [Node] } }) {
+
+      order.push(10);   // [ 10 ];
+
+      if (node.left) traverse({ value: 6, left: [Node], right: [Node] });   // TRUE
+      if (node.right) traverse(node.right);
+    }
+
+    traverse(10);
+    return order;
+  }
+
+========================
+    SECOND ITERATION
+========================
+
+    function traverse({ value: 6, left: [Node], right: [Node] }) {
+
+      order.push(6);   // [ 10, 6 ];
+
+      if (node.left) traverse(2);           // TRUE
+      if (node.right) traverse(node.right);
+    }
+
+========================
+    THIRD ITERATION
+========================
+
+    function traverse({ value: 2, left: null, right: null }) {
+
+      order.push(2);   // [ 10, 6, 2 ];
+
+      if (node.left) traverse(node.left);           // FALSE
+      if (node.right) traverse(node.right);          // FALSE
+    }
+
+NOTE: traverse(2) pops off the stack then vertically moves back up to 6
+
+========================
+    FOURTH ITERATION
+========================
+
+    function traverse({ value: 6, left: [Node], right: [Node] }) {
+
+      order.push(2);   // [ 10, 6, 2 ];
+
+      if (node.left) traverse(node.left);                                      // FALSE
+      if (node.right) traverse({ value: 2, left: null, right: null });          // TRUE
+    }
+
+========================
+    FIFTH ITERATION
+========================
+
+    function traverse({ value: 6, left: [Node], right: [Node] }) {
+
+      order.push(7);   // [ 10, 6, 2 , 7];
+
+      if (node.left) traverse(node.left);                                      // FALSE
+      if (node.right) traverse({ value: 2, left: null, right: null });          // TRUE
+    }
+
+NOTE: traverse(6) pops off the stack then vertically moves back up to root
+
+========================
+    SIXTH ITERATION
+========================
+
+    function traverse({ value: 10, left: Node { value: 6, left: [Node], right: [Node] }, right: Node { value: 15, left: null, right: [Node] } }) {
+
+      order.push(15);   // [ 10, 6, 2 , 7, 15 ];
+
+      if (node.left) traverse(node.left);                                      // FALSE
+      if (node.right) traverse({ value: 15, left: null, right: [Node] });      // TRUE
+    }
+
+========================
+    SEVENTH ITERATION
+========================
+  
+  depthFirstPreOrder() {
+    let order = [];
+    let current = this.root;
+
+    function traverse({ value: 15, left: null, right: [Node] }) {
+
+      order.push(24);   // [ 10, 6, 2 , 7, 15, 24 ];
+
+      if (node.left) traverse(node.left);          // FALSE
+      if (node.right) traverse(node.right);        // FALSE
+    }
+
+    traverse(current);
+    return [ 10, 6, 2 , 7, 15, 24 ];
+  }
+
+NOTE: traverse(24) pops off the stack then vertically moves back up to root
+
+*/
 ```
 
 ---
