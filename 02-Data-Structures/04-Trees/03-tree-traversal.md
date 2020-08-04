@@ -632,6 +632,20 @@ tree.depthFirstPostOrder();    //  [ 2, 7, 6, 10, 15, 24 ]
 
 ---
 
+## Breadth-first VS Depth-first
+
+The time complexity of the breadth-first and depth-first are the same because you visit each node once. If you had 100 nodes in a treee, no matter which approach you take will always visit 100 nodes. The time is proportionate to `n` as it grows. However, the space that is used in a breadth-first approach could be a lot more than using a depth-first approach. A depth-first search doesn't store each node across the tree, only the nodes in a given branch all the way down the tree. A wider tree - as opposed to a deep tree - uses less space.
+
+---
+
+## Depth-first Search: pre-order VS post-order VS in-order
+
+An **in-order** approach is genereally used on a bianry search trees where the data returns a set of nodes in their underlying order of traversal.
+
+If you're attempting to clone or duplicate a tree, **pre-order** or **post-order** would be a beneficial approach. It starts with the root node of the tree and traverses each branch from the left and then right.
+
+---
+
 ## Tree Traversal: Resources
 
 **Tutorials Point**: Tree Traversal
