@@ -231,7 +231,7 @@ class BST {
     return current;
   }
 
-  // depth-first seearch: pre-order
+  // depth-first search: pre-order
 
   depthFirstPreOrder() {
     let order = [];
@@ -460,7 +460,7 @@ class BST {
     return current;
   }
 
-  // depth-first seearch: post-order
+  // depth-first search: post-order
 
   depthFirstPostOrder() {
     let order = [];
@@ -583,7 +583,7 @@ class BST {
     return current;
   }
 
-  // depth-first seearch: post-order
+  // depth-first search: in-order
 
   depthFirstInOrder() {
     let order = [];
