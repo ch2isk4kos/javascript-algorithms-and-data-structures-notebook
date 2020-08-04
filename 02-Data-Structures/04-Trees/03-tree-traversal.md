@@ -231,26 +231,6 @@ class BST {
     return current;
   }
 
-  // breadth-first search
-
-  breadthFirst() {
-    let node = this.root;
-    let data = [];
-    let queue = [];
-
-    queue.push(this.root);
-
-    // while something is in the queue
-    while(queue.length) {
-      node = queue.shift();
-      data.push(node.value);
-
-      if (node.left) queue.push(node.left);
-      if (node.right) queue.push(node.right);
-    }
-    return data;
-  }
-
   // depth-first seearch: pre-order
 
   depthFirstPreOrder() {
