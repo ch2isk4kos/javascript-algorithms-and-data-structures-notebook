@@ -41,4 +41,11 @@ The right child is stored at `2n + 2`
 ### search for the parent of a child node
 
 For any child node at index `n`:
-Its parent is at index `( n - 1 ) / 2`
+Its parent is at index `( n - 1 ) / 2` rounded down.
+
+---
+
+## Binary Heap: Solution
+
+```js
+```
