@@ -385,6 +385,101 @@ NOTE: traverse(24) pops off the stack then vertically moves back up to root
 */
 ```
 
+</br>
+
+### DFS: Post Order
+
+Visits the root node first. Then explores the entire left side before traversing the right side of the tree.
+
+```js
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+class BST {
+  constructor() {
+    this.root = null;
+  }
+
+  // add node to tree
+
+  insert(value) {
+    let node = new Node(value);
+    let current;
+
+    if (this.root === null) {
+      this.root = node;
+      return this;
+    } else {
+      current = this.root;
+
+      while(true) {
+        if (value === current.value) return undefined;
+
+        if (value < current.value) {
+          if (current.left === null) {
+            current.left = node;
+            return this;
+          } else {
+            current = current.left;
+          }
+        } else if (value > current.value) {
+          if (current.right === null) {
+            current.right = node;
+            return this;
+          } else {
+            current = current.right;
+          }
+        }
+      }
+    }
+  }
+
+  // find node in tree
+
+  find(value) {
+    if (this.root === null) return false;
+
+    let current = this.root;
+    let found = false;
+
+    while(current && !found) {
+      if (value < current.value) {
+        current = current.left;
+      } else if (value > current.value) {
+        current = current.right
+      } else {
+        found = true;
+      }
+    }
+    if (!found) return undefined;
+    return current;
+  }
+
+  // depth-first seearch: post-order
+
+  depthFirstPostOrder() {
+    let order = [];
+    let current = this.root;
+
+    function traverse(node) {
+      order.push(node.value);
+
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+    }
+
+    traverse(current);
+    return order;
+  }
+
+}
+```
+
 ---
 
 ## Tree Traversal: Resources
