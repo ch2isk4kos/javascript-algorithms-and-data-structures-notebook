@@ -49,3 +49,19 @@ Its parent is at index `( n - 1 ) / 2` rounded down.
 
 ```js
 ```
+
+---
+
+## Binary Heap: Resources
+
+**GeeksforGeeks**: Binary Heaps
+<https://www.geeksforgeeks.org/binary-heap/>
+
+**CMU**: Binary Heaps
+<https://www.cs.cmu.edu/~adamchik/15-121/lectures/Binary%20Heaps/heaps.html>
+
+**Tutorials Point**: Binary Heaps
+<https://www.tutorialspoint.com/design_and_analysis_of_algorithms/design_and_analysis_of_algorithms_binary_heap.htm>
+
+**Stanford**: Binary Heaps
+<https://web.stanford.edu/class/archive/cs/cs106b/cs106b.1206/lectures/heaps/>
