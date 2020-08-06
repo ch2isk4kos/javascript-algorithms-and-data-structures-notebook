@@ -22,6 +22,8 @@ Also used for **Graph Traveral**.
 
 Parent nodes are always larger than child nodes. Each parent has at most two children.
 
+You add values to a Max Binary Heap by inserting to the bottom of the tree and **bubble up** by taking the inserted value and comparing it to its parent. If the value is greater than its parent, they switch positions.
+
 ### Min Binary Heap
 
 Parent nodes are always smaller than child nodes.
@@ -48,6 +50,11 @@ Its parent is at index `( n - 1 ) / 2` rounded down.
 ## Binary Heap: Solution
 
 ```js
+class MaxBinaryHeap {
+  constructor() {
+    values = [];
+  }
+}
 ```
 
 ---
