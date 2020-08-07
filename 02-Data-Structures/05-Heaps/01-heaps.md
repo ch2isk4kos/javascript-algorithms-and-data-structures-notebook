@@ -18,3 +18,6 @@ They're are various types of Heap with the more popular kind being the **Binary 
 
 **GeeksforGeeks**: Heaps
 <https://www.geeksforgeeks.org/heap-data-structure/>
+
+**HackerRank**: Data Structures - Heaps
+<https://www.youtube.com/watch?v=t0Cq6tVNRBA>
