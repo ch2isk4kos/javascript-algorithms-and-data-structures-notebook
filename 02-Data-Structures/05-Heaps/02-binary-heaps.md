@@ -100,6 +100,8 @@ heap.insert(24);
 heap.insert(33);
 heap.insert(34);
 
+heap
+
 // MaxBinaryHeap { values: [ 34, 33, 24, 15, 8, 7, 16, 2 ] }
 
 ```
