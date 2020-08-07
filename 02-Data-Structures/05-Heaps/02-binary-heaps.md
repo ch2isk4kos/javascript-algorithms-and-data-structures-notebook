@@ -55,7 +55,8 @@ class MaxBinaryHeap {
     this.values = [];
   }
 
-  // add node to tree
+  // add node to heap
+  
   insert(node) {
     this.values.push(node);
     this.bubbleUp();
@@ -76,6 +77,12 @@ class MaxBinaryHeap {
       idx = parentIdx;
     }
   }
+
+  // remove node from heap
+
+  remove() {
+
+  }
 }
 ```
 
@@ -92,6 +99,8 @@ heap.insert(16);
 heap.insert(24);
 heap.insert(33);
 heap.insert(34);
+
+// MaxBinaryHeap { values: [ 34, 33, 24, 15, 8, 7, 16, 2 ] }
 
 ```
 
