@@ -2,7 +2,7 @@
 
 ---
 
-## Priority Queues
+## Priority Queue
 
 <https://en.wikipedia.org/wiki/Priority_queue>
 
