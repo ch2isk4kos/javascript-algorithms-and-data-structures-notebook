@@ -26,3 +26,105 @@ Iterate over each each item to find the highest priorty node.
 **NOTE:** a lower priorty number denotes a higher priority.
 
 ---
+
+## Priority Queue: Solution
+
+```js
+class Node {
+  constructor(value, priority) {
+    this.value = value;
+    this.priority = priority;
+  }
+}
+
+class PriorityQueue {
+  constructor() {
+    this.values = [];
+  }
+
+  // add node to queue
+  
+  enqueue(value, priority) {
+    let node = new Node(value, priority)
+    this.values.push(node);
+    this.bubbleUp();
+  }
+
+  bubbleUp(){
+    let idx = this.values.length - 1;
+    const element = this.values[idx];
+
+    while(idx > 0){
+      let parentIdx = Math.floor((idx - 1) / 2);
+      let parent = this.values[parentIdx];
+
+      if(element.priority <= parent.priority) break;
+
+      this.values[parentIdx] = element;
+      this.values[idx] = parent;
+      idx = parentIdx;
+    }
+  }
+
+  // remove node from queue
+
+  dequeue() {
+    // remove first node and replace with max node
+    let max = this.values[0];
+    let end = this.values.pop();
+
+    // edge case
+    if (this.values > 0) {
+      this.values[0] = end;
+      this.sinkDown();
+    }
+
+    return max;
+  }
+
+  // adjust heap structure
+
+  sinkDown() {
+    let index = 0;
+    const length = this.values.length;
+    const node = this.values[0];
+
+    while (true) {
+      let leftChildIndex = 2 * index + 1;
+      let rightChildIndex = 2 * index + 2;
+
+      // check to make sure children aren't out of bounds
+      let leftChild, rightChild;
+      let swap = null;
+
+      // left child
+      if (leftChild < length) {
+        leftChild = this.values[leftChildIndex];
+
+        if (leftChild.priority > node.priority) {
+          swap = leftChildIndex;
+        }
+      }
+
+      // right child
+      if (rightChild < length) {
+        rightChild = this.values[rightChildIndex];
+
+        if (
+          (swap === null && rightChild.priority > node.priority) ||
+          (swap !== null && rightChild.priority > leftChild.priority)
+        ) {
+          swap = rightChildIndex;
+        }
+      }
+
+      if (swap === null) break;
+
+      // swap
+      this.values[index] = this.values[swap];
+      this.values[swap] = node;
+      index = swap;
+    }
+  }
+}
+```
