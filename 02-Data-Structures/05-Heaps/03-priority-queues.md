@@ -58,7 +58,7 @@ class PriorityQueue {
       let parentIdx = Math.floor((idx - 1) / 2);
       let parent = this.values[parentIdx];
 
-      if(element.priority <= parent.priority) break;
+      if (element.priority >= parent.priority) break;
 
       this.values[parentIdx] = element;
       this.values[idx] = parent;
@@ -70,19 +70,19 @@ class PriorityQueue {
 
   dequeue() {
     // remove first node and replace with max node
-    let max = this.values[0];
+    let min = this.values[0];
     let end = this.values.pop();
 
     // edge case
-    if (this.values > 0) {
+    if (this.values.length > 0) {
       this.values[0] = end;
       this.sinkDown();
     }
 
-    return max;
+    return min;
   }
 
-  // adjust heap structure
+  // adjust structure
 
   sinkDown() {
     let index = 0;
@@ -101,7 +101,7 @@ class PriorityQueue {
       if (leftChild < length) {
         leftChild = this.values[leftChildIndex];
 
-        if (leftChild.priority > node.priority) {
+        if (leftChild.priority < node.priority) {
           swap = leftChildIndex;
         }
       }
@@ -111,8 +111,8 @@ class PriorityQueue {
         rightChild = this.values[rightChildIndex];
 
         if (
-          (swap === null && rightChild.priority > node.priority) ||
-          (swap !== null && rightChild.priority > leftChild.priority)
+          (swap === null && rightChild.priority < node.priority) ||
+          (swap !== null && rightChild.priority < leftChild.priority)
         ) {
           swap = rightChildIndex;
         }
@@ -128,3 +128,45 @@ class PriorityQueue {
   }
 }
 ```
+
+### breakdown
+
+```js
+let queue = new PriorityQueue();
+
+queue.enqueue("head cold", 5);
+queue.enqueue("broken arm", 2);
+queue.enqueue("concussion", 1);
+queue.enqueue("deep cut", 3);
+queue.enqueue("flu", 4);
+
+queue
+/*
+PriorityQueue {
+  values: [
+    Node { value: 'concussion', priority: 1 },
+    Node { value: 'deep cut', priority: 3 },
+    Node { value: 'broken arm', priority: 2 },
+    Node { value: 'head cold', priority: 5 },
+    Node { value: 'flu', priority: 4 }
+  ]
+}
+*/
+
+queue.dequeue();  // Node { value: 'concussion', priority: 1 }
+
+queue
+/*
+PriorityQueue {
+  values: [
+    Node { value: 'flu', priority: 4 },
+    Node { value: 'deep cut', priority: 3 },
+    Node { value: 'broken arm', priority: 2 },
+    Node { value: 'head cold', priority: 5 }
+  ]
+}
+*/
+
+```
+
+---
