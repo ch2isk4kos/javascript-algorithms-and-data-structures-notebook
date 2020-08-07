@@ -14,6 +14,18 @@ They're are various types of Heap with the more popular kind being the **Binary 
 
 ---
 
+## Heap: Big O
+
+</br>
+
+| insertion | removal | searching |
+| ----------- | --------- | --------- |
+| O( log n ) | O( log n ) | O ( n ) |
+
+</br>
+
+---
+
 ## Heap: Resources
 
 **GeeksforGeeks**: Heaps
