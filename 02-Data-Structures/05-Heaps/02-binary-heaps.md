@@ -102,10 +102,12 @@ class MaxBinaryHeap {
     // remove first node and replace with max node
     let max = this.values[0];
     let end = this.values.pop();
-    this.values[0] = end;
 
-    // sink down
-    this.sinkDown();
+    // edge case
+    if (this.values > 0) {
+      this.values[0] = end;
+      this.sinkDown();
+    }
 
     return max;
   }
