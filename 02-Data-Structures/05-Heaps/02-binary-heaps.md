@@ -98,11 +98,62 @@ class MaxBinaryHeap {
 
   // remove node from heap
 
-  remove() {
+  extractMax() {
+    // remove first node and replace with max node
+    let max = this.values[0];
+    let end = this.values.pop();
+    this.values[0] = end;
 
+    // sink down
+    this.sinkDown();
+
+    return max;
   }
 
   // adjust heap structure
+
+  sinkDown() {
+    let index = 0;
+    const length = this.values.length;
+    const node = this.values[0];
+
+    while (true) {
+      let leftChildIndex = 2 * index + 1;
+      let rightChildIndex = 2 * index + 2;
+
+      // check to make sure children aren't out of bounds
+      let leftChild, rightChild;
+      let swap = null;
+
+      // left child
+      if (leftChild < length) {
+        leftChild = this.values[leftChildIndex];
+
+        if (leftChild > node) {
+          swap = leftChildIndex;
+        }
+      }
+
+      // right child
+      if (rightChild < length) {
+        rightChild = this.values[rightChildIndex];
+
+        if (
+          (swap === null && rightChild > node) ||
+          (swap !== null && rightChild > leftChild)
+        ) {
+          swap = rightChildIndex;
+        }
+      }
+
+      if (swap === null) break;
+
+      // swap
+      this.values[index] = this.values[swap];
+      this.values[swap] = node;
+      index = swap;
+    }
+  }
 }
 ```
 
@@ -120,10 +171,11 @@ heap.insert(24);
 heap.insert(33);
 heap.insert(34);
 
-heap
+heap  // MaxBinaryHeap { values: [ 34, 33, 24, 15, 8, 7, 16, 2 ] }
 
-// MaxBinaryHeap { values: [ 34, 33, 24, 15, 8, 7, 16, 2 ] }
+heap.extractMax();  // 34
 
+heap  // MaxBinaryHeap { values: [ 2, 33, 24, 15, 8, 7, 16 ] }
 ```
 
 ---
