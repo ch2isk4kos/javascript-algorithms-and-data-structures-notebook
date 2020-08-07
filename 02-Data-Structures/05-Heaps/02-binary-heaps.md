@@ -28,6 +28,24 @@ You add values to a Max Binary Heap by inserting to the bottom of the tree and *
 
 Parent nodes are always smaller than child nodes.
 
+### Bubble Up
+
+Moving a node from the end up to the correct location.
+
+### Sink Down
+
+The procedure for removing the root node from the heap - effectively extracting the maximum element of a Max Heap or the minimum element of a Min Heap.
+
+Restoring the properties is referred to any of the following:
+
+* Bubble Down
+* Percolate Down
+* Sift Down
+* Trickle Down
+* Heapify Down
+* Cascade Down
+* Extract Min/Max
+
 ---
 
 ## Binary Heap: Storing
@@ -83,6 +101,8 @@ class MaxBinaryHeap {
   remove() {
 
   }
+
+  // adjust heap structure
 }
 ```
 
