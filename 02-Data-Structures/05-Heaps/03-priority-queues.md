@@ -14,6 +14,8 @@ While priority queues are often implemented with Heaps, they are conceptually di
 
 The logic behind a Priority Queue is to retrieve one node at a time - out of the structure - and _do something_ to it. Think of an emergency room that admits  patients based on the severity of their wound, i.e.: a broken leg would have priority over someone with the common cold.
 
+</br>
+
 ### Naive Priorty Queue
 
 Use a list to store all nodes.
@@ -170,3 +172,23 @@ PriorityQueue {
 ```
 
 ---
+
+## Priority Queue: Resources
+
+**GeeksforGeeks**: Priority Queues
+<https://www.geeksforgeeks.org/priority-queue-set-1-introduction/>
+
+**Tuorials Point**: Priority Queues
+<https://www.tutorialspoint.com/data_structures_algorithms/priority_queue.htm>
+
+**University of Wisconsin-Madison**: Priority Queues
+<http://pages.cs.wisc.edu/~vernon/cs367/notes/11.PRIORITY-Q.html>
+
+**Microsoft**: Priority Queue Pattern
+<https://docs.microsoft.com/en-us/azure/architecture/patterns/priority-queue>
+
+**William Fiset**: Priority Queue Introduction
+<https://www.youtube.com/watch?v=wptevk0bshY>
+
+**Cacti Council**: Heaps & Priority Queues
+<https://www.youtube.com/watch?v=qXdt1AHMB2o>
