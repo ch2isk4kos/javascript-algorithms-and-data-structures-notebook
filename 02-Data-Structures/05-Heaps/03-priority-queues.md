@@ -171,12 +171,6 @@ PriorityQueue {
 
 ```
 
----
-
-## Priority Queue: Big O
-
----
-
 ## Priority Queue: Resources
 
 **GeeksforGeeks**: Priority Queues
