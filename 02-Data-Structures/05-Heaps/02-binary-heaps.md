@@ -52,11 +52,47 @@ Its parent is at index `( n - 1 ) / 2` rounded down.
 ```js
 class MaxBinaryHeap {
   constructor() {
-    values = [];
+    this.values = [];
   }
 
   // add node to tree
+  insert(node) {
+    this.values.push(node);
+    this.bubbleUp();
+  }
+
+  bubbleUp(){
+    let idx = this.values.length - 1;
+    const element = this.values[idx];
+
+    while(idx > 0){
+      let parentIdx = Math.floor((idx - 1) / 2);
+      let parent = this.values[parentIdx];
+
+      if(element <= parent) break;
+
+      this.values[parentIdx] = element;
+      this.values[idx] = parent;
+      idx = parentIdx;
+    }
+  }
 }
+```
+
+### breakdown
+
+```js
+let heap = new MaxBinaryHeap();
+
+heap.insert(2);
+heap.insert(7);
+heap.insert(8);
+heap.insert(15);
+heap.insert(16);
+heap.insert(24);
+heap.insert(33);
+heap.insert(34);
+
 ```
 
 ---
