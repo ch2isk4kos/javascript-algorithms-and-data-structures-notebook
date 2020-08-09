@@ -12,6 +12,10 @@ Ideally, the hash function will assign each key to a unique bucket, but most has
 
 ---
 
+## Hash Table: Solution
+
+---
+
 ## Hash Table: Resources
 
 **Tutorials Point**: Hash Tables
