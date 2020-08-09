@@ -189,11 +189,11 @@ hash("yellow", 10);   // 2
 
 Even with a large array and an efficient hash function, it's inevidable to have collisions. A collision is when two pieces of data are assigned the same position inside of the table.
 
-There are many strategies when dealing with collisions. Two of the more common approaches are: **Seperate Chaining** and **Linear Probing**.
+There are many strategies when dealing with collisions. Two of the more common approaches are: **Separate Chaining** and **Linear Probing**.
 
 </br>
 
-#### 1. Seperate Chaining
+#### 1. Separate Chaining
 
 each index in the array storing the values of the table uses a more sophisticated data structure like another **array** or a **linked list**.
 
