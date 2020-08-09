@@ -77,16 +77,35 @@ A good **Hash Function** must be:
 2. **deterministic** ⇢ pure function
 3. **uniformly distributed** ⇢ no cluster outputs at specified indices
 
----
+</br>
 
-## Hash Table: Solution
+### Hash Function: Converting Strings to Numeric Values
 
 ```js
-// hash function
+// converting a string to a valid numeric value in JavaScript
 
-function hash() {
-  
-}
+"string".charCodeAt(index);   // built-in function
+
+"c".charCodeAt(0);            // 99
+"chris".charCodeAt(1);        // 104
+"chris".charCodeAt(2);        // 114
+"chris".charCodeAt(3);        // 105
+"chris".charCodeAt(4);        // 115
+
+// subtracting 96 from the statement will output its alphabetic position
+
+"a".charCodeAt(0) - 96;       // 1
+"z".charCodeAt(0) - 96;       // 26
+
+// calculating a strings alphanumric code
+
+let total = 0
+
+total += "chris".charCodeAt(0) - 96;    // 3  
+total += "chris".charCodeAt(1) - 96;    // 11
+total += "chris".charCodeAt(2) - 96;    // 29
+total += "chris".charCodeAt(3) - 96;    // 38
+total += "chris".charCodeAt(4) - 96;    // 57
 
 ```
 
