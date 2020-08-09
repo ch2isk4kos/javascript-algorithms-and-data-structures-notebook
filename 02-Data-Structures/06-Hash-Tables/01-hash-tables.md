@@ -204,6 +204,15 @@ each index in the array storing the values of the table uses a more sophisticate
 
 </br>
 
+#### 2. Linear Probing
+
+checks to see if there is a collision before storing the value. If bucket is already occupied, moves to the next empty position.
+
+| 0 | 1 | 2 | 3 |
+| ----------- | --------- | ----------- | ----------- |
+| [ "blue", #0000FF ]  | [ "goldenyellow", #FFDF00 ] | [ "crimson", #990000 ]  | [ "darkgrey", #A9A9A9 ] |
+|   | ~~[ "darkgrey", #A9A9A9 ]~~ | ~~[ "darkgrey", #A9A9A9 ]~~  |
+
 ---
 
 ## Hash Table: Resources
