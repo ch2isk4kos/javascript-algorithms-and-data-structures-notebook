@@ -111,7 +111,7 @@ total += "chris".charCodeAt(4) - 96;    // 57
 
 </br>
 
-### Hash Function: Solution
+### Hash Function: Naive Solution
 
 ```js
 // hash function
@@ -132,6 +132,16 @@ hash("red", 10);      // 7
 hash("yellow", 10);   // 2
 
 ```
+
+</br>
+
+**The Problems with this Solution**:
+
+1. only hashes strings
+2. not constant time - linear in key length
+3. could be more arbitrary
+
+</br>
 
 ---
 
