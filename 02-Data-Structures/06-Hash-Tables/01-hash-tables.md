@@ -69,6 +69,14 @@ hash("KU");                       # -732096421873222899
 
 ```
 
+</br>
+
+A good **Hash Function** must be:
+
+1. **fast** ⇢ constant time: O( n )
+2. **deterministic** ⇢ pure function
+3. **uniformly distributed** ⇢ no cluster outputs at specified indices
+
 ---
 
 ## Hash Table: Solution
