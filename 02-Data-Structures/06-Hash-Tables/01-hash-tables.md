@@ -109,6 +109,30 @@ total += "chris".charCodeAt(4) - 96;    // 57
 
 ```
 
+</br>
+
+### Hash Function: Solution
+
+```js
+// hash function
+
+function hash(key, arrayLength) {
+  let total = 0;
+
+  for (let char of key) {
+    // map character of string to it's alphabetic position
+    let value = char.charCodeAt(0) - 96;
+    total = (total + value) % arrayLength;
+  }
+  return total;
+}
+
+hash("blue", 10);     // 0
+hash("red", 10);      // 7
+hash("yellow", 10);   // 2
+
+```
+
 ---
 
 ## Hash Table: Resources
