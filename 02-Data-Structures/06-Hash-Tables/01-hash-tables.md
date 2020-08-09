@@ -193,7 +193,7 @@ There are many strategies when dealing with collisions. Two of the more common a
 
 </br>
 
-#### Seperate Chaining
+#### 1. Seperate Chaining
 
 each index in the array storing the values of the table uses a more sophisticated data structure like another **array** or a **linked list**.
 
