@@ -6,13 +6,41 @@
 
 <https://en.wikipedia.org/wiki/Hash_table>
 
-A data structure that implements an associative array abstract data type, a structure that can map keys to values. A hash table uses a hash function to compute an index, also called a hash code, into an array of buckets or slots, from which the desired value can be found. During lookup, the key is hashed and the resulting hash indicates where the corresponding value is stored.
+A data structure that implements an associative array abstract data type, a structure that can map keys to values. A hash table uses a hash function to compute an index, also called a **hash code**, into an array of buckets or slots, from which the desired value can be found. During lookup, the key is hashed and the resulting hash indicates where the corresponding value is stored.
 
-Ideally, the hash function will assign each key to a unique bucket, but most hash table designs employ an imperfect hash function, which might cause hash collisions where the hash function generates the same index for more than one key. Such collisions are always accommodated in some way.
+**NOTE:** a hash table is similar to an array but the keys are not ordered by index.
+
+Ideally, the hash function will assign each key to a unique **bucket**, but most hash table designs employ an imperfect hash function, which might cause hash collisions where the hash function generates the same index for more than one key. Such collisions are always accommodated in some way.
+
+Unlike arrays, hash tables are efficient when:
+
+* finding values
+* inserting values
+* inserting new values
+* removing values
+
+Also referred to as a **Hash Map**.
+
+</br>
+
+| Language | Hash Table |
+| ----------- | --------- |
+| Python | dictionaries |
+| JavaScript | objects and maps |
+| Java | maps |
+| Go | maps |
+| Scala | maps |
+| Ruby | hashes |
+
+</br>
+
+**NOTE:** there are some restrictions with objects but they take the form of a hash table.
 
 ---
 
-## Hash Table: Solution
+## Hash Table: Example
+
+If you're using an array to implement a hash table - when looking up values, you'll need a way to convert keys into valid array indices.
 
 ---
 
