@@ -239,7 +239,7 @@ class HashTable {
     return total;
   }
 
-  // add a value to table
+  // insert a key/value to table
 
   set(key, value) {
     // hashes key
@@ -254,6 +254,21 @@ class HashTable {
     return index;
   }
 
+  // retreive value of key
+
+  get(key) {
+    // hash key
+    let index = this._hash(key);
+
+    if (this.keyMap[index]) {
+      for (let i = 0; i < this.keyMap[index]; i++) {
+        if (this.keyMap[index][i][0] === key) {
+          return this.keyMap[index][i];
+        }
+      }
+    }
+    return undefined;
+  }
 
 }
 
