@@ -263,7 +263,7 @@ class HashTable {
     if (this.keyMap[index]) {
       for (let i = 0; i < this.keyMap[index]; i++) {
         if (this.keyMap[index][i][0] === key) {
-          return this.keyMap[index][i];
+          return this.keyMap[index][i][1];
         }
       }
     }
