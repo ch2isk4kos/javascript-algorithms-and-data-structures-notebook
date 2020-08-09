@@ -217,6 +217,33 @@ checks to see if there is a collision before storing the value. If bucket is alr
 
 ---
 
+## Hash Table: Solution
+
+```js
+class HashTable {
+  constructor(size = 53) {
+    this.keyMap = new Array(size);
+  }
+
+  // private hash function
+  
+  _hash(key) {
+    let total = 0;
+    let PRIME_LENGTH = 31;  // could be any large prime number
+
+    for (let i = 0; i < Math.min(key.length, 100); i++) {
+      let char = key[i];
+      let value = char.charCodeAt(0) - 96;
+      total = (total * PRIME_LENGTH + value) % this.keyMap.length;
+    }
+    return total;
+  }
+}
+
+```
+
+---
+
 ## Hash Table: Resources
 
 **Tutorials Point**: Hash Tables
