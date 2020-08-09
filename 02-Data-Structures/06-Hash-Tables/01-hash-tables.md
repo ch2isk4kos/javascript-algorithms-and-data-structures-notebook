@@ -49,7 +49,7 @@ Any function that can be used to map data of arbitrary size to fixed-size values
 ```js
 hash("blue")   // 0
 hash(#FFDF00)  // 1
-hash("red")    // 2
+hash("crimson")    // 2
 ```
 
 | 0 | 1 | 2 |
@@ -59,6 +59,28 @@ hash("red")    // 2
 </br>
 
 🗣ROCK CHALK JAYHAWK
+
+```python
+# Python has a built in hash method
+
+hash("Kansas Jayhawks");          # 6066059440938518963
+hash("Rock Chalk Jayhawk");       # 5706366610436769526
+hash("KU");                       # -732096421873222899
+
+```
+
+---
+
+## Hash Table: Solution
+
+```js
+// hash function
+
+function hash() {
+  
+}
+
+```
 
 ---
 
