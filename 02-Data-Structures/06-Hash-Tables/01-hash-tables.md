@@ -54,7 +54,7 @@ hash("crimson")    // 2
 
 | 0 | 1 | 2 |
 | ----------- | --------- | ----------- |
-| "blue", #0000FF  | "golden yellow", #FFDF00 | "crimson", #990000  |  |  |  |  |  |
+| "blue", #0000FF  | "golden yellow", #FFDF00 | "crimson", #990000  |
 
 </br>
 
@@ -212,6 +212,8 @@ checks to see if there is a collision before storing the value. If bucket is alr
 | ----------- | --------- | ----------- | ----------- |
 | [ "blue", #0000FF ]  | [ "goldenyellow", #FFDF00 ] | [ "crimson", #990000 ]  | [ "darkgrey", #A9A9A9 ] |
 |   | ~~[ "darkgrey", #A9A9A9 ]~~ | ~~[ "darkgrey", #A9A9A9 ]~~  |
+
+</br>
 
 ---
 
