@@ -42,6 +42,20 @@ Also referred to as a **Hash Map**.
 
 If you're using an array to implement a hash table - when looking up values, you'll need a way to convert keys into valid array indices. To aquire this functionality - use what is referred to as a **Hash Function**.
 
+```js
+hash("blue")   // 0
+hash(#FFDF00)  // 1
+hash("red")    // 2
+```
+
+| 0 | 1 | 2 |
+| ----------- | --------- | ----------- |
+| "blue", #0000FF  | "golden yellow", #FFDF00 | "crimson", #990000  |  |  |  |  |  |
+
+</br>
+
+🗣ROCK CHALK JAYHAWK
+
 ---
 
 ## Hash Table: Resources
