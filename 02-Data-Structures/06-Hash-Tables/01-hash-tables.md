@@ -38,7 +38,7 @@ Also referred to as a **Hash Map**.
 
 ---
 
-## Hash Table: Hash Function
+## Hash Table: Hash Functions
 
 <https://en.wikipedia.org/wiki/Hash_function>
 
@@ -127,6 +127,20 @@ function hash(key, arrayLength) {
   return total;
 }
 
+// ***************** === *******************
+
+function hash(key, arrayLength) {
+  let total = 0;
+
+  for (let i = 0; i < key.length; i++) {
+    // map character of string to it's alphabetic position
+    let char = key[i];
+    let value = char.charCodeAt(0) - 96;
+    total = (total + value) % arrayLength;
+  }
+  return total;
+}
+
 hash("blue", 10);     // 0
 hash("red", 10);      // 7
 hash("yellow", 10);   // 2
@@ -142,6 +156,32 @@ hash("yellow", 10);   // 2
 3. could be more arbitrary
 
 </br>
+
+### Hash Function: Naive Solution with Prime Number
+
+```js
+
+function hash(key, arrayLength) {
+  let total = 0;
+  let PRIME_LENGTH = 31;
+
+  for (let i = 0; i < Math.min(key.length, 100); i++) {
+    let char = key[i];
+    let value = char.charCodeAt(0) - 96;
+    total = (total * PRIME_LENGTH + value) % arrayLength;
+  }
+  return total;
+}
+
+hash("blue", 10);     // 0
+hash("red", 10);      // 7
+hash("yellow", 10);   // 2
+
+```
+
+</br>
+
+`PRIME_LENGTH` is helpful in spreading out the keys more uniformly. It's helpful if the length of the input array is a prime length.
 
 ---
 
