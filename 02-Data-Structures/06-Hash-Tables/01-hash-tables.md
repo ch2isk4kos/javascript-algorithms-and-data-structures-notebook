@@ -238,6 +238,23 @@ class HashTable {
     }
     return total;
   }
+
+  // add a value to table
+
+  set(key, value) {
+    // hashes key
+    let index = this._hash(key);
+
+    // stores key-value pair in the hash table array via separate chaining
+    if (!this.keyMap[index]) {
+      this.keyMap[index] = [];
+    }
+
+    this.keyMap[index].push([key, value]);
+    return index;
+  }
+
+
 }
 
 ```
