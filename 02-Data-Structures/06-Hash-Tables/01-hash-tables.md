@@ -38,9 +38,9 @@ Also referred to as a **Hash Map**.
 
 ---
 
-## Hash Table: Example
+## Hash Table: Hash Function
 
-If you're using an array to implement a hash table - when looking up values, you'll need a way to convert keys into valid array indices.
+If you're using an array to implement a hash table - when looking up values, you'll need a way to convert keys into valid array indices. To aquire this functionality - use what is referred to as a **Hash Function**.
 
 ---
 
