@@ -183,6 +183,27 @@ hash("yellow", 10);   // 2
 
 `PRIME_LENGTH` is helpful in spreading out the keys more uniformly. It's helpful if the length of the input array is a prime length.
 
+</br>
+
+### Hash Function: Handling Collisions
+
+Even with a large array and an efficient hash function, it's inevidable to have collisions. A collision is when two pieces of data are assigned the same position inside of the table.
+
+There are many strategies when dealing with collisions. Two of the more common approaches are: **Seperate Chaining** and **Linear Probing**.
+
+</br>
+
+#### Seperate Chaining
+
+each index in the array storing the values of the table uses a more sophisticated data structure like another **array** or a **linked list**.
+
+| 0 | 1 | 2 |
+| ----------- | --------- | ----------- |
+| [ "blue", #0000FF ]  | **[** [ "goldenyellow", #FFDF00 ] **,** | [ "crimson", #990000 ]  |
+|   | [ "darkgrey", #A9A9A9 ] **]**|   |
+
+</br>
+
 ---
 
 ## Hash Table: Resources
