@@ -406,3 +406,19 @@ NOTE: since each vertice has already been visited, it breaks the loop
 
 */
 ```
+
+---
+
+## Graph Traversal: Resources
+
+**Visualgo:** Graph Traversal (DFS/BFS)
+<https://visualgo.net/en/dfsbfs>
+
+**GeeksforGeeks:** Graph Traversal
+<https://www.geeksforgeeks.org/algorithms-gq/graph-traversals-gq/>
+
+**BTech Smart Class:** Introduction to Graphs
+<http://btechsmartclass.com/data_structures/introduction-to-graphs.html>
+
+**HackerRank:** Algorithms: Graph Search DFS and BFS
+<https://www.youtube.com/watch?v=zaBhtODEL0w>
