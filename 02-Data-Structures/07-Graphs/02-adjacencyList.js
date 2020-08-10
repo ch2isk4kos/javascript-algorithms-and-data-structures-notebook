@@ -9,8 +9,8 @@ class Graph {
 
   // add vertex
 
-  addVertex(name) {
-    if (!this.adjacencyList[name]) this.adjacencyList[name] = [];
+  addVertex(v) {
+    if (!this.adjacencyList[v]) this.adjacencyList[v] = [];
   }
 
   // connect two vertices
@@ -18,6 +18,13 @@ class Graph {
   addEdge(v1, v2) {
     this.adjacencyList[v1].push(v2);
     this.adjacencyList[v2].push(v1);
+  }
+
+  // remove connection of two vertices
+
+  removeEdge(v1, v2) {
+    this.adjacencyList[v1] = this.adjacencyList[v1].filter(v => v !== v2);
+    this.adjacencyList[v2] = this.adjacencyList[v2].filter(v => v !== v1);
   }
 }
 
@@ -51,5 +58,31 @@ Graph {
       'Oakland': [ 'New York' ],
       'San Fransisco': [ 'New Jersey' ] 
     } 
+}
+*/
+
+graph.addEdge("New York", "New Jersey");
+/*
+Graph {
+  adjacencyList:
+    { 
+      'New York': [ 'Oakland', 'New Jersey' ],    <-- LOOK!!!
+      'New Jersey': [ 'San Fransisco' ],
+      'Oakland': [ 'New York' ],
+      'San Fransisco': [ 'New Jersey' ] 
+    } 
+}
+*/
+
+graph.removeEdge("New York", "New Jersey");
+/*
+Graph {
+  adjacencyList:
+    { 
+      'New York': [ 'Oakland' ],                  <-- LOOK!!!
+      'New Jersey': [ 'San Fransisco' ],
+      'Oakland': [ 'New York' ],
+      'San Fransisco': [ 'New Jersey' ] 
+    }
 }
 */
