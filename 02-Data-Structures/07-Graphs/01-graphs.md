@@ -94,3 +94,42 @@ Uses an array or a list to log edges.
 </br>
 
 ---
+
+## Graph: Big O - Matrix vs List
+
+</br>
+
+**key:**
+v = number of vertices
+e = number of edges
+
+| operation     | adjacency matrix    | adjacency list |
+| ------------  | ------------------- | -------------- |
+| Add Vertex    | O ( v<sup>2</sup> ) | O ( 1 )        |
+| Add Edge      | O ( 1 )             | O ( 1 )        |
+| Remove Vertex | O ( v<sup>2</sup> ) | O ( v + e )    |
+| Remove Edge   | O ( 1 )             | O ( e )        |
+| Query         | O ( 1 )             | O ( v + e )    |
+| Storage       | O ( v<sup>2</sup> ) | O ( v + e )    |
+
+</br>
+
+### Big O: Adjacency Matrix
+
+* Takes up more space ( in sparse graphs )
+* Slower to iterate over all edges
+* **Faster to look up specific edge**
+
+</br>
+
+### Big O: Adjacency List
+
+* Slower to look up specific edge
+* **Can take less space ( in sparse graphs )**
+* **Faster to iterate over edges**
+
+</br>
+
+**NOTE:** all data in the _real-world_ tends to represent sparser and/or larger graphs.
+
+---
