@@ -40,7 +40,7 @@ A collection of nodes and connections between them. No parent node or starting a
 
 A square matrix used to represent a finite graph. The elements of the matrix indicate whether pairs of vertices are adjacent or not in the graph.
 
-A **Matrix** is a 2 dimensional structure usually implemented - but not always -  with nested arrays.
+A **matrix** is a 2-Dimensional structure usually implemented - but not always -  with nested arrays.
 
 </br>
 
@@ -58,3 +58,39 @@ A **Matrix** is a 2 dimensional structure usually implemented - but not always -
 | **F** | **1** | 0 | 0 | 0 | **1** | 0 |
 
 </br>
+
+---
+
+## Graph: Adjacency List
+
+<https://en.wikipedia.org/wiki/Adjacency_list>
+
+A collection of unordered lists used to represent a finite graph. Each list describes the set of neighbors of a vertex in the graph.
+
+Uses an array or a list to log edges.
+
+</br>
+
+### array
+
+| - | 0 | 1 | 2 | 3 | 4 | 5 |  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| **[** | [ 1, 5 ] **,** | [ 0, 2 ] **,** | [ 1, 3 ] **,** | [ 2, 4 ] **,** | [ 3, 5 ] **,** | [ 4, 0 ] **,** | **]**
+
+</br>
+
+### list
+
+| { |  |
+| --- | --- |
+| **A:** | [ "B", "F" ] **,** |
+| **B:** | [ "A", "C" ] **,** |
+| **C:** | [ "B", "D" ] **,** |
+| **D:** | [ "C", "E" ] **,** |
+| **E:** | [ "D", "F" ] **,** |
+| **F:** | [ "E", "A" ] **,** |
+| **}** |  |
+
+</br>
+
+---
