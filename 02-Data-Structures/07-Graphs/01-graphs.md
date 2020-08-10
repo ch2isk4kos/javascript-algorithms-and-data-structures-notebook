@@ -8,7 +8,7 @@
 
 An abstract data type that is meant to implement the undirected graph and directed graph concepts from the field of graph theory within mathematics.
 
-A graph data structure consists of a finite (and possibly mutable) set of vertices (also called nodes or points), together with a set of unordered pairs of these vertices for an undirected graph or a **set** of ordered pairs for a directed graph. These pairs are known as edges (also called links or lines), and for a directed graph are also known as arrows. The vertices may be part of the graph structure, or may be external entities represented by integer indices or references.
+A graph data structure consists of a finite - and possibly mutable - **set of vertices** - also called **nodes** or **points** - together with a set of unordered pairs of these vertices for an _undirected graph_ or a set of ordered pairs for a _directed graph_. These pairs are known as **edges** - also called **links** or **lines** - and for a _directed graph_ are also known as **arrows**. The vertices may be part of the graph structure, or may be external entities represented by integer indices or references.
 
 A graph data structure may also associate to each edge some edge value, such as a symbolic label or a numeric attribute (cost, capacity, length, etc.).
 
