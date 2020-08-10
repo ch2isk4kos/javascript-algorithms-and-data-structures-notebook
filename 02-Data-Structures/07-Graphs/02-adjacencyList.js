@@ -1,5 +1,5 @@
 /* 
-This is an example of a undirected graph
+This is an example of a undirected - adjacent list - graph 
 */
 
 class Graph {
@@ -7,7 +7,7 @@ class Graph {
     this.adjacencyList = {};
   }
 
-  // add vertex
+  // insert vertex
 
   addVertex(v) {
     if (!this.adjacencyList[v]) this.adjacencyList[v] = [];
@@ -25,6 +25,17 @@ class Graph {
   removeEdge(v1, v2) {
     this.adjacencyList[v1] = this.adjacencyList[v1].filter(v => v !== v2);
     this.adjacencyList[v2] = this.adjacencyList[v2].filter(v => v !== v1);
+  }
+
+  // remove vertex from graph
+
+  removeVertex(v) {
+    for (let i = 0; i < this.adjacencyList[v].length;  i++) {
+      const vertex = this.adjacencyList[v].pop();
+      this.removeEdge(v, vertex);
+    }
+
+    delete this.adjacencyList[v];
   }
 }
 
@@ -83,6 +94,18 @@ Graph {
       'New Jersey': [ 'San Fransisco' ],
       'Oakland': [ 'New York' ],
       'San Fransisco': [ 'New Jersey' ] 
+    }
+}
+*/
+
+graph.removeVertex("New Jersey");
+/*
+Graph {
+  adjacencyList:
+    { 
+      'New York': [ 'Oakland' ],
+      'Oakland': [ 'New York' ],
+      'San Fransisco': [] 
     }
 }
 */
