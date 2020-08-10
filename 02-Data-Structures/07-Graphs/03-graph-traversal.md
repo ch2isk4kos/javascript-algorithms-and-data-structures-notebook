@@ -25,3 +25,9 @@ Graph Traversal deals with visiting, updating and checking vertices in a graph.
   * AI ( Shortest path to win the game )
 
 ---
+
+## Graph Traversal: Depth-first Search
+
+<https://www.geeksforgeeks.org/depth-first-search-or-dfs-for-a-graph/>
+
+Exploring as far down one edge as possible before backtracking.
