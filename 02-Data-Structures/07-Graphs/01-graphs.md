@@ -31,3 +31,30 @@ A collection of nodes and connections between them. No parent node or starting a
 * **Unweighted** - no values assigned to distances between vertices.
 * **Directed** - one way connection between vertices.
 * **Undirected** - two way connections between vertices.
+
+---
+
+## Graph: Adjacency Matrix
+
+<https://en.wikipedia.org/wiki/Adjacency_matrix>
+
+A square matrix used to represent a finite graph. The elements of the matrix indicate whether pairs of vertices are adjacent or not in the graph.
+
+A **Matrix** is a 2 dimensional structure usually implemented - but not always -  with nested arrays.
+
+</br>
+
+**key:**
+0 = no edge
+1 = edgee
+
+| - | A | B | C | D | E | F |
+| --- | --- | --- | --- | --- | --- | --- |
+| **A** | 0 | **1** | 0 | 0 | 0 | **1** |
+| **B** | **1** | 0 | **1** | 0 | 0 | 0 |
+| **C** | 0 | **1** | 0 | **1** | 0 | 0 |
+| **D** | 0 | 0 | **1** | 0 | **1** | 0 |
+| **E** | 0 | 0 | 0 | **1** | 0 | **1** |
+| **F** | **1** | 0 | 0 | 0 | **1** | 0 |
+
+</br>
