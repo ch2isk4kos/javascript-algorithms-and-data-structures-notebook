@@ -16,4 +16,9 @@ class Graph {
 
 let graph = new Graph();
 
-graph.addVertex("Get Money");       //  Graph { adjacencyList: { 'Get Money': [] } }
+graph.addVertex("New York");         //  Graph { adjacencyList: { 'New York': [] } }
+graph.addVertex("New Jersey");       //  Graph { adjacencyList: { 'New York': [], 'New Jersey': [] } }
+graph.addVertex("Oakland");          //  Graph { adjacencyList: { 'New York': [], 'New Jersey': [], 'Oakland': [] } }
+graph.addVertex("San Fransisco");    //  Graph { adjacencyList: { 'New York': [], 'New Jersey': [], 'Oakland': [], 'San Fransisco': [] } }
+
+graph.adjacencyList["New York"].push("New York City");
