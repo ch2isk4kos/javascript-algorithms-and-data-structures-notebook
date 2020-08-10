@@ -270,6 +270,33 @@ class HashTable {
     return undefined;
   }
 
+  // prints an array of keys in table
+
+  keys() {
+  }
+
+  // prints all values in table
+
+  values() {
+    let array = [];
+
+    // loop over table
+    for (let i = 0; i < this.keyMap.length; i++) {
+      // if there is something in the bucket
+      if (this.keyMap[i]) {
+        // loop over items inside of the bucket
+        for (let j = 0; j < this.keyMap[i].length; j++) {
+          // if the value is unique
+          if (!array.includes(this.keyMap[i][j][1])) {
+            // add item to `array`
+            array.push(this.keyMap[i][j][1]);
+          }
+        }
+      }
+    }
+    return array;
+  }
+
 }
 
 ```
