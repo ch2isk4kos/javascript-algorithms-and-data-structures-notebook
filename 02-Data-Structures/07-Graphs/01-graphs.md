@@ -13,3 +13,21 @@ A graph data structure consists of a finite (and possibly mutable) set of vertic
 A graph data structure may also associate to each edge some edge value, such as a symbolic label or a numeric attribute (cost, capacity, length, etc.).
 
 A collection of nodes and connections between them. No parent node or starting and end positions.
+
+### Use Cases
+
+* Social Networking
+* Location / Mapping
+* Routing Algorithms
+* Visual Hierarchy
+* File System Optimization
+* **Just About Everywhere**
+
+### Types of Graphs
+
+* **Vertex** - a node
+* **Edge** - connection between nodes
+* **Weighted** - values assigned to distances between vertices.
+* **Unweighted** - no values assigned to distances between vertices.
+* **Directed** - one way connection between vertices.
+* **Undirected** - two way connections between vertices.
