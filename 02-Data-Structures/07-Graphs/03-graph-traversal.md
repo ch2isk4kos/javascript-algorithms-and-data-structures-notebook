@@ -31,3 +31,67 @@ Graph Traversal deals with visiting, updating and checking vertices in a graph.
 <https://www.geeksforgeeks.org/depth-first-search-or-dfs-for-a-graph/>
 
 Exploring as far down one edge as possible before backtracking.
+
+</br>
+
+### recursive
+
+```js
+class Graph {
+  constructor() {
+    this.adjacencyList = {};
+  }
+
+  addVertex(v) {
+    if (!this.adjacencyList[v]) this.adjacencyList[v] = [];
+  }
+
+  addEdge(v1, v2) {
+    this.adjacencyList[v1].push(v2);
+    this.adjacencyList[v2].push(v1);
+  }
+
+  removeEdge(v1, v2) {
+    this.adjacencyList[v1] = this.adjacencyList[v1].filter(v => v !== v2);
+    this.adjacencyList[v2] = this.adjacencyList[v2].filter(v => v !== v1);
+  }
+
+  removeVertex(v) {
+    for (let i = 0; i < this.adjacencyList[v].length;  i++) {
+      const vertex = this.adjacencyList[v].pop();
+      this.removeEdge(v, vertex);
+    }
+    delete this.adjacencyList[v];
+  }
+
+  // depth-first recursive search
+
+  recursiveDFS(start) {
+    const result = [];
+    const visited = {};
+    const adjacencyList = this.adjacencyList;
+
+    // IIFE
+    (function dfs(vertex) {
+      if (!vertex) return null;
+
+      visited[vertex] = true;
+      result.push(vertex);
+
+      console.log('vertex', adjacencyList[vertex]);
+
+      adjacencyList[vertex].forEach(neighbor => {
+        if (!visited[neighbor]) {
+          return dfs(neighbor)
+        }
+      })
+    })(start);
+
+    return result;
+  }
+}
+```
+
+```js
+let graph = new Graph();
+```
