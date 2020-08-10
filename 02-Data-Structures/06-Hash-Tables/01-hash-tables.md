@@ -73,7 +73,7 @@ hash("KU");                       # -732096421873222899
 
 A good **Hash Function** must be:
 
-1. **fast** ⇢ constant time: O( n )
+1. **fast** ⇢ constant time: O ( 1 )
 2. **deterministic** ⇢ pure function
 3. **uniformly distributed** ⇢ no cluster outputs at specified indices
 
@@ -329,6 +329,18 @@ table.get("blue");              // '#0000FF'
 table.keys();                   // [ 'blue', 'crimson', 'goldenyellow' ]
 table.values();                 // [ '#0000FF', '#990000', '#FFDF00' ]
 ```
+
+---
+
+## Hash Table: Big O
+
+</br>
+
+| insertion | removal | searching |
+| ----------- | --------- | --------- |
+| O ( 1 ) | O ( 1 ) | O ( 1 ) |
+
+</br>
 
 ---
 
