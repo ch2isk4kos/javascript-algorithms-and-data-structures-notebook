@@ -34,7 +34,9 @@ Exploring as far down one edge as possible before backtracking.
 
 </br>
 
-### recursive
+### depth-first:  recursive
+
+Uses the **call stack** to keep track of the direction of search
 
 ```js
 class Graph {
@@ -120,4 +122,95 @@ graph.addEdge("E","F");
 //          F
 
 graph.recursiveDFS("A")  //   [ 'A', 'B', 'D', 'E', 'C', 'F' ]
+```
+
+</br>
+
+### depth-first: iterative
+
+Uses an **internal list** or **array** to keep track of direction of search
+
+```js
+class Graph {
+  constructor() {
+    this.adjacencyList = {};
+  }
+
+  addVertex(v) {
+    if (!this.adjacencyList[v]) this.adjacencyList[v] = [];
+  }
+
+  addEdge(v1, v2) {
+    this.adjacencyList[v1].push(v2);
+    this.adjacencyList[v2].push(v1);
+  }
+
+  removeEdge(v1, v2) {
+    this.adjacencyList[v1] = this.adjacencyList[v1].filter(v => v !== v2);
+    this.adjacencyList[v2] = this.adjacencyList[v2].filter(v => v !== v1);
+  }
+
+  removeVertex(v) {
+    for (let i = 0; i < this.adjacencyList[v].length;  i++) {
+      const vertex = this.adjacencyList[v].pop();
+      this.removeEdge(v, vertex);
+    }
+    delete this.adjacencyList[v];
+  }
+
+  // depth-first iterative search
+
+  iterativeDFS(start) {
+    const stack = [start];
+    const result = [];
+    const visited = {};
+    let current;
+
+    visited[start] = true;
+
+    while (stack.length) {
+      current = stack.pop();
+      result.push(current);
+
+      this.adjacencyList[current].forEach(next => {
+        if (!visited[next]) {
+          visited[next] = true;
+          stack.push(next);
+        }
+      })
+    }
+
+    return result;
+  }
+}
+```
+
+```js
+let graph = new Graph();
+
+graph.addVertex("A");
+graph.addVertex("B");
+graph.addVertex("C");
+graph.addVertex("D");
+graph.addVertex("E");
+graph.addVertex("F");
+
+
+graph.addEdge("A", "B");
+graph.addEdge("A", "C");
+graph.addEdge("B","D");
+graph.addEdge("C","E");
+graph.addEdge("D","E");
+graph.addEdge("D","F");
+graph.addEdge("E","F");
+
+//          A
+//        /   \
+//       B     C
+//       |     |
+//       D --- E
+//        \   /
+//          F
+
+graph.iterativeDFS("A");     //   [ 'A', 'C', 'E', 'F', 'D', 'B' ]
 ```
