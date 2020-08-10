@@ -221,7 +221,7 @@ checks to see if there is a collision before storing the value. If bucket is alr
 
 ```js
 class HashTable {
-  constructor(size = 53) {
+  constructor(size=53) {
     this.keyMap = new Array(size);
   }
 
@@ -245,26 +245,26 @@ class HashTable {
     // hashes key
     let index = this._hash(key);
 
-    // stores key-value pair in the hash table array via separate chaining
+    // stores key/value pair in the hash table array via separate chaining
     if (!this.keyMap[index]) {
       this.keyMap[index] = [];
     }
 
     this.keyMap[index].push([key, value]);
-    return index;
   }
 
   // retreive value of key
 
   get(key) {
-    // hash key
     let index = this._hash(key);
 
     if (this.keyMap[index]) {
-      for (let i = 0; i < this.keyMap[index]; i++) {
+      for (let i = 0; i < this.keyMap[index].length; i++) {
+
         if (this.keyMap[index][i][0] === key) {
           return this.keyMap[index][i][1];
         }
+
       }
     }
     return undefined;
@@ -316,6 +316,18 @@ class HashTable {
 
 }
 
+```
+
+```js
+let table = new HashTable();
+
+table.set("blue", "#0000FF");
+table.set("goldenyellow", "#FFDF00");
+table.set("crimson", "#990000");
+
+table.get("blue");              // '#0000FF'
+table.keys();                   // [ 'blue', 'crimson', 'goldenyellow' ]
+table.values();                 // [ '#0000FF', '#990000', '#FFDF00' ]
 ```
 
 ---
