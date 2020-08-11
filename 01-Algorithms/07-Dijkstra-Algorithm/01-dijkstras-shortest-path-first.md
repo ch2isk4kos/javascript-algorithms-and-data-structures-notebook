@@ -8,7 +8,9 @@
 
 An algorithm for finding the shortest paths between nodes in a graph, which may represent, for example, road networks. It was conceived by computer scientist **Edsger W. Dijkstra** in 1956 and published three years later.
 
-One of the most popular alogrithms among Computer Scientists.
+Dijkstra's Algorithm searches for the shortest path between two vertices on a graph.
+
+One of the most popular alogrithms amongst Computer Scientists and one of the more widely used algorithms to date.
 
 **NOTE:** not to be confused with Dykstra's Projection Algorithm.
 
