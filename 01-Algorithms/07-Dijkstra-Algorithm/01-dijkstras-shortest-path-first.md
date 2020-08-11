@@ -2,6 +2,16 @@
 
 ---
 
+## Edsger W. Dijkstra (May 30, 1930 - August 6, 2002)
+
+<https://en.wikipedia.org/wiki/Edsger_W._Dijkstra>
+
+A Dutch computer scientist, programmer, software engineer, systems scientist, science essayist and pioneer in computing science. A theoretical physicist by training, he worked as a programmer at the Mathematisch Centrum (Amsterdam) from 1952 to 1962.
+
+Dijkstra helped advance the field of Computer Science from an art to an academic discipline.
+
+---
+
 ## History of Dijkstra's Algorithm
 
 <https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm>
@@ -16,14 +26,14 @@ One of the most popular alogrithms amongst Computer Scientists and one of the mo
 
 There are two _prerequisite_ data structures involved: **Graph** and **Priority Queue**.
 
----
+</br>
 
-## Edsger W. Dijkstra (May 30, 1930 - August 6, 2002)
+### Use Cases
 
-<https://en.wikipedia.org/wiki/Edsger_W._Dijkstra>
-
-A Dutch computer scientist, programmer, software engineer, systems scientist, science essayist and pioneer in computing science. A theoretical physicist by training, he worked as a programmer at the Mathematisch Centrum (Amsterdam) from 1952 to 1962.
-
-Dijkstra helped advance the field of Computer Science from an art to an academic discipline.
+* **GPS** - finding fastest route
+* **Network Routing** - finds shortest open path for data
+* **Biology** - used to model the spread of viruses among humans
+* **Airline Tickets** - find cheapest route to a destination
+* many others
 
 ---
