@@ -199,7 +199,7 @@ Pick the smallest distance: **3**
 | **B**  | ~~infinity~~, 6           |
 | **C**  | ~~infinity~~, 7           |
 | **D**  | ~~infinity~~, 1           |
-| **E**  | ~~infinity~~, ~~2~~       |
+| **E**  | ~~infinity~~, 2           |
 | **F**  | ~~infinity~~, 3           |
 
 </br>
@@ -207,7 +207,49 @@ Pick the smallest distance: **3**
 ```js
 /*
 
-VISITED = ["A", "E"]
+VISITED = ["A", "E", "F"]
+
+PREVIOUS:
+{
+  A: null
+  B: ["A"]
+  C: ["A"]
+  D: ["F"]
+  E: ["A"]
+  F: ["E"]
+}
+
+*/
+```
+
+### Solution: The Shortest Path from A to D is through F
+
+</br>
+
+![Weight Graph](<https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fzytools.zybooks.com%2FzyAuthor%2FDiscreteMath%2F25%2FIMAGES%2Fembedded_image631dlA2bWxfUcxrFTcOic5s8ihoKMqUyEvIoS5dJtw-GPk_10_Bs2ItdkpPk.png&f=1&nofb=1>)
+
+</br>
+
+The distance between:
+
+~~E has already been visited.~~
+~~F has already been visited.~~
+
+| Vertex | Shortest Distance From A  |
+| ------ | ------------------------- |
+| **A**  | 0                         |
+| **B**  | ~~infinity~~, 6           |
+| **C**  | ~~infinity~~, 7           |
+| **D**  | ~~infinity~~, 1           |
+| **E**  | ~~infinity~~, 2           |
+| **F**  | ~~infinity~~, 3           |
+
+</br>
+
+```js
+/*
+
+VISITED = ["A", "E", "F", "D"]
 
 PREVIOUS:
 {
@@ -240,3 +282,9 @@ PREVIOUS:
 
 **Sergiy Butenko:** Dijkstras Algorithm for Shortest Path Problem
 <https://www.youtube.com/watch?v=9jY7bgnDV8w>
+
+**Edsger W. Dijkstra - Lecture:** Reasoning About Programs - Solving 2 problems using programing - 1990
+<https://www.youtube.com/watch?v=GX3URhx6i2E>
+
+**Edsger W. Dijkstra:** The Power of Counting Arguments
+<https://www.youtube.com/watch?v=0kXjl2e6qD0>
