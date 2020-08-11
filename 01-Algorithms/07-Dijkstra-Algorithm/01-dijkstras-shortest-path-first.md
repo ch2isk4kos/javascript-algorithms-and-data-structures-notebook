@@ -37,3 +37,20 @@ There are two _prerequisite_ data structures involved: **Graph** and **Priority 
 * many others
 
 ---
+
+## Dijkstra Algorithm: Resources
+
+**GeeksforGeeks:** Dijkstras Shortest Path Algorithm | Greedy Algo-7
+<https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-greedy-algo-7/>
+
+**Brilliant:** Dijkstras Shortest Path Finder
+<https://brilliant.org/wiki/dijkstras-short-path-finder/>
+
+**CodinGame:** Shortest Paths with Dijkstras Algorithm
+<https://www.codingame.com/playgrounds/1608/shortest-paths-with-dijkstras-algorithm/dijkstras-algorithm>
+
+**Dr. Mike Pound:** Dijkstras Algorithm
+<https://www.youtube.com/watch?v=GazC3A4OQTE>
+
+**Sergiy Butenko:** Dijkstras Algorithm for Shortest Path Problem
+<https://www.youtube.com/watch?v=9jY7bgnDV8w>
