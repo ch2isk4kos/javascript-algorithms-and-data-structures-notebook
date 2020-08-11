@@ -38,6 +38,192 @@ There are two _prerequisite_ data structures involved: **Graph** and **Priority 
 
 ---
 
+## Breaking Down Dijkstra's Algorithm
+
+1. Everytime you wish to visit a node, choose the node with the smallest known distance to visit first.
+
+2. Once you visited node with the smallest known distance, check each of its neighboring nodes.
+
+3. For each neighboring node, calculate the distance by summing the total edges that lead to the neighboring node from the node you began with.
+
+4. If the total new distance to a node is less than the previous total, store a new shorter distance for that node.
+
+</br>
+
+### Find the Shortest Path from A to D
+
+</br>
+
+![Weight Graph](<https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fzytools.zybooks.com%2FzyAuthor%2FDiscreteMath%2F25%2FIMAGES%2Fembedded_image631dlA2bWxfUcxrFTcOic5s8ihoKMqUyEvIoS5dJtw-GPk_10_Bs2ItdkpPk.png&f=1&nofb=1>)
+
+</br>
+
+### First Iteration: initial state
+
+| Vertex | Shortest Distance From A |
+| ------ | ------------------------ |
+| **A**  | 0                        |
+| **B**  | infinity                 |
+| **C**  | infinity                 |
+| **D**  | infinity                 |
+| **E**  | infinity                 |
+| **F**  | infinity                 |
+
+</br>
+
+```js
+/*
+
+VISITED = ["A"]
+
+PREVIOUS:
+{
+  A: null
+  B: null
+  C: null
+  D: null
+  E: null
+  F: null
+}
+
+*/
+```
+
+#### Check Neighboring Nodes of A
+
+The distance between:
+
+A and B is less than infinity.
+A and F is less than infinity.
+A and C is less than infinity.
+A and E is less than infinity.
+
+Pick the smallest distance: **2**
+
+| Vertex | Shortest Distance From A |
+| ------ | ------------------------ |
+| **A**  | 0                        |
+| **B**  | ~~infinity~~, 6          |
+| **C**  | ~~infinity~~, 7          |
+| **D**  | infinity                 |
+| **E**  | ~~infinity~~, 2          |
+| **F**  | ~~infinity~~, 3          |
+
+</br>
+
+```js
+/*
+
+VISITED = ["A"]
+
+PREVIOUS:
+{
+  A: null
+  B: ["A"]
+  C: ["A"]
+  D: null
+  E: ["A"]
+  F: ["A"]
+}
+
+*/
+```
+
+</br>
+
+### Second Iteration: Check Neighboring Nodes of E
+
+</br>
+
+![Weight Graph](<https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fzytools.zybooks.com%2FzyAuthor%2FDiscreteMath%2F25%2FIMAGES%2Fembedded_image631dlA2bWxfUcxrFTcOic5s8ihoKMqUyEvIoS5dJtw-GPk_10_Bs2ItdkpPk.png&f=1&nofb=1>)
+
+</br>
+
+The distance between:
+
+~~A has already been visited.~~
+E and C is less than infinity.
+E and D is less than infinity.
+E and F is less than infinity.
+
+Pick the smallest distance: **3**
+
+| Vertex | Shortest Distance From A  |
+| ------ | ------------------------- |
+| **A**  | 0                         |
+| **B**  | ~~infinity~~, 6           |
+| **C**  | ~~infinity~~, 7           |
+| **D**  | ~~infinity~~, 4           |
+| **E**  | ~~infinity~~, ~~2~~       |
+| **F**  | ~~infinity~~, 3           |
+
+</br>
+
+```js
+/*
+
+VISITED = ["A", "E"]
+
+PREVIOUS:
+{
+  A: null
+  B: ["A"]
+  C: ["A", "E"]
+  D: ["E"]
+  E: ["A"]
+  F: ["A", "E"]
+}
+
+*/
+```
+
+### Third Iteration: Check Neighboring Nodes of F
+
+</br>
+
+![Weight Graph](<https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fzytools.zybooks.com%2FzyAuthor%2FDiscreteMath%2F25%2FIMAGES%2Fembedded_image631dlA2bWxfUcxrFTcOic5s8ihoKMqUyEvIoS5dJtw-GPk_10_Bs2ItdkpPk.png&f=1&nofb=1>)
+
+</br>
+
+The distance between:
+
+~~A has already been visited.~~
+~~E has already been visited.~~
+F and D is less than infinity.
+
+Pick the smallest distance: **3**
+
+| Vertex | Shortest Distance From A  |
+| ------ | ------------------------- |
+| **A**  | 0                         |
+| **B**  | ~~infinity~~, 6           |
+| **C**  | ~~infinity~~, 7           |
+| **D**  | ~~infinity~~, 1           |
+| **E**  | ~~infinity~~, ~~2~~       |
+| **F**  | ~~infinity~~, 3           |
+
+</br>
+
+```js
+/*
+
+VISITED = ["A", "E"]
+
+PREVIOUS:
+{
+  A: null
+  B: ["A"]
+  C: ["A"]
+  D: ["F"]
+  E: ["A"]
+  F: ["E"]
+}
+
+*/
+```
+
+---
+
 ## Dijkstra Algorithm: Resources
 
 **GeeksforGeeks:** Dijkstras Shortest Path Algorithm | Greedy Algo-7
