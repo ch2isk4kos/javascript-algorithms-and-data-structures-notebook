@@ -12,4 +12,4 @@ In both contexts it refers to simplifying a complicated problem by breaking it d
 
 If sub-problems can be nested recursively inside larger problems, so that dynamic programming methods are applicable, then there is a relation between the value of the larger problem and the values of the sub-problems. In the optimization literature this relationship is called the **Bellman equation**.
 
-
+---
