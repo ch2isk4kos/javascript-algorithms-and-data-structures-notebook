@@ -13,3 +13,17 @@ In both contexts it refers to simplifying a complicated problem by breaking it d
 If sub-problems can be nested recursively inside larger problems, so that dynamic programming methods are applicable, then there is a relation between the value of the larger problem and the values of the sub-problems. In the optimization literature this relationship is called the **Bellman equation**.
 
 ---
+
+## Dynamic Programming: Resources
+
+**GeeksforGeeks:** Dynamic Programming
+<https://www.geeksforgeeks.org/dynamic-programming/>
+
+**Tutorials Point:** Dynamic Programming
+<https://www.tutorialspoint.com/design_and_analysis_of_algorithms/design_and_analysis_of_algorithms_dynamic_programming.htm>
+
+**Hacker Earth:** Introduction to Dynamic Programming I
+<https://www.hackerearth.com/practice/algorithms/dynamic-programming/introduction-to-dynamic-programming-1/tutorial/>
+
+**CMU.edu:** Lecture 11 - Dynamic Programming
+<https://www.cs.cmu.edu/~avrim/451f09/lectures/lect1001.pdf>
