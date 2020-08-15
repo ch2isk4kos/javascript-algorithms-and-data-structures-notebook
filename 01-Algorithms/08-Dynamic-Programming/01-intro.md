@@ -25,5 +25,8 @@ If sub-problems can be nested recursively inside larger problems, so that dynami
 **Hacker Earth:** Introduction to Dynamic Programming I
 <https://www.hackerearth.com/practice/algorithms/dynamic-programming/introduction-to-dynamic-programming-1/tutorial/>
 
-**CMU.edu:** Lecture 11 - Dynamic Programming
+**Stanford:** Dynamic Programming
+<https://web.stanford.edu/class/cs97si/04-dynamic-programming.pdf>
+
+**CMU:** Lecture 11 - Dynamic Programming
 <https://www.cs.cmu.edu/~avrim/451f09/lectures/lect1001.pdf>
